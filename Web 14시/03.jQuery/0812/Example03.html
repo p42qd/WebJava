@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example03 - jQuery</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(function() {
+            window.setTimeout(function() {
+                var $itemInFavorites = $("#favorite > option:selectd");
+                alert($itemInFavorites.val());
+            }, 3000);
+        });
+    </script>
+</head>
+<body>
+    <select id="favorite">
+        <option value="apple">Apple</option>
+        <option value="bag">Bag</option>
+        <option value="cat">Cat</option>
+        <option value="dog">Dog</option>
+        <option value="elephant">Elephant</option>
+    </select>
+</body>
+</html>

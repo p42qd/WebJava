@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Example03</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+
+</head>
+<body>
+    <pre><script>
+
+        // 배열에 저장된 각 원소를 2초 간격으로 출력
+        var comments = [
+            "1. Time is gold", 
+            "2. No sweat, no sweet", 
+            "3. Asking costs nothings.", 
+            "4. Step by step goes a long way.", 
+            "5. You will never know until you try."
+        ];
+
+        var i = 0;
+
+        //  함수를 정의하지 않고 익명함수를 전달하여
+        //  타이머를 등록할 수 있다.
+        window.setInterval(function() {
+            // 2초마다 동작하는 함수
+            
+            console.log(comments[i % comments.length]);
+            i++;
+            // if ( i == comments.length) i = 0;
+            // i %= comments.length;
+        }, 2000);
+       
+
+    </script></pre>
+</body>
+</html>

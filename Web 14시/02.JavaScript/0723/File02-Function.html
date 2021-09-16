@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+
+    <!-- 함수(function) -->
+    <pre><script>
+        // 정의된 코드 이전에 사용해도 호출이 되어진다.
+        hello();
+        document.writeln("-----------------------");
+
+        // 함수 정의
+        function hello () {
+            document.writeln("Hello World!");
+        }
+        // 함수 호출(call)
+        // 호출할 때는 반드시 소괄호까지 작성해야 한다.
+        hello ();
+        hello ();
+        hello ();
+        hello ();
+        hello ();
+        hello ();
+    </script></pre>
+
+    <pre><script>
+        // 함수 정의
+        function add(x, y) {
+            document.writeln(x + " + " + y + " = " + (x + y));
+        }
+        add(10, 20);
+    </script></pre>
+
+    <pre><script>
+        // 함수 정의
+        function add(x, y) {
+            //결과 반환
+            return x + y;
+        }
+        var sum = add(10, 20);
+    </script></pre>
+
+    <pre><script>
+        var a = 20;
+        var b = 15;
+        var max = a > b ? a : b;
+        document.writeln("max("+a+", "+b+") : " + max);
+
+        b = 30;
+        document.writeln("max("+a+", "+b+") : " + max);
+
+        // 언제든지 최대값을 구할 수 있도록 
+        // 최대값을 구하는 코드를 저장하는 함수를 정의
+        function getMax(a, b) {
+            var max = a > b ? a : b;
+            return max;
+        }
+        a = 10;
+        b = 15;
+        document.writeln("max("+a+", "+b+") : " + getMax(a, b));
+
+        a = 30;
+        b = 15;
+        document.writeln("max("+a+", "+b+") : " + getMax(a, b));
+    </script></pre>
+
+    <pre><script>
+        // 자신의 이름을 출력하는 함수를 정의
+        function printName(name) {
+            document.writeln(name);
+        }
+        printName("신준호");
+    </script></pre>
+
+    <pre><script>
+        // 매개변수로 전달된 값이 30보다 작을 때 "Hello World"를 출력하고,
+        // 그렇지 않으면 "Hello JavaScript!"를 출력하는 함수를 선언
+        // 선언해 놓은 함수를 두 번 호출하여, 각각 인자 값을 33, 17을 전달하는 프로그램
+
+        function sayHello(num){
+            if(num < 30) {
+                document.writeln("Hello World!");
+            }else {
+                document.writeln("Hello JavaScript!");
+            }
+        }
+        
+        sayHello(33);
+        sayHello(17);
+    </script></pre>
+
+    <pre><script>
+        // 두 수를 매개변수로 받아 평균을 계산해 반환하는 함수 선언
+        // 선언한 함수를 이용해 두 수의 평균을 구하고 출력하는 프로그램
+
+        // function getAverage(num1, num2){
+        //     document.writeln((num1 + num2) / 2);
+        // }
+        // getAverage(10, 20);
+
+            function getAverage(a, b) {
+                var result = (a + b) / 2;
+                return result;
+            }
+
+            // 함수를 호출하고 결과 값을 변수 avg 에 저장한다.
+            var avg = getAverage(45, 55);
+
+            // 함수는 코드를 저장하고 있고 소괄호가 없으면 코드가 반환된다.
+            // 코드를 수행하려면 소괄호를 작성해야 한다.
+            document.writeln(getAverage);
+    </script></pre>
+
+    <pre><script>
+        // 익명함수
+        //  이름이 없는 함수
+
+        // anFnn(); 변수가 선언되기 전이기 때문에 사용 불가능
+
+        // 익명함수를 변수에 저장할 수 있다.
+        // 함수를 저장하더라도 변수이기 때문에 
+        // 선언하고 난 다음에만 사용할 수 있다.
+        var anFun = function () {
+            document.writeln("익명함수입니다.");
+        }
+
+        // 소괄호를 붙이면 코드가 수행된다.
+        anFun();
+    </script></pre>
+
+    <pre><script>
+
+        function simple(a) {
+            document.writeln(a);
+        }
+
+        var x = 10;
+        simple(x);
+        simple(20);
+
+        
+        function simple2(f) {
+            f();
+        }
+
+        function defaultFun() {
+            document.writeln("일반 함수입니다.");
+        }
+
+        // simple2 함수에 defaultFun의 함수를 전달
+        simple2(defaultFun);
+
+        simple2(function () {
+            document.writeln("익명함수입니다.")
+        });
+
+    </script></pre>
+
+    <pre><script>
+        // window.setInterval(defaultFun, 1000);
+    </script></pre>
+
+    <pre><script>
+        // 인덱스를 전달 받아 그 인덱스에 해당하는 배열 원소를 반환하는 함수를 선언
+        // 선언한 함수를 이용해 세번째 원소를 출력하는 프로그램
+
+        var items = ["Apple", "Banana", "Candy", "Doll"];
+        function getItem() {
+
+        }
+    </script></pre>
+</body>
+</html>

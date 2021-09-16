@@ -1,0 +1,18 @@
+
+Home: 커서를  라인의 맨 앞으로 이동
+End: 커서를 라인의 맨 뒤로 이동
+<p>The standard Lorem Ipsum passage, used since the 1500s</p>
+
+Ctrl + 좌, 우: 단어별 커서 이동
+<p>The standard Lorem Ipsum passage, used since the 1500s</p>
+<b></b>
+
+Alt 누르고 클릭 시 동시에 커서를 생성하여 여러 라인 작성 가능
+Ctrl + Alt + 방향키 아래: 아래라인에 커서를 생성하여 동시에 작성가능
+
+Ctrl + Shift + 위, 아래: 커서가 위치한 텍스트를 위, 아래에 복붙
+
+
+
+
+

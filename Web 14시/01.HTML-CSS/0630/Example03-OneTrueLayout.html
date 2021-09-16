@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Example03 - One True Layout</title>
+    <style>
+        #container{
+            /* 레이아웃의 폭을 1080px로 고정 */
+            width: 1080px;
+            /* 브라우저 중앙에 배치 */
+            margin: 0 auto;
+
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        #container > * {
+            border: 3px solid #333;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        /* 사이드바 + 컨텐츠 영역 */
+        #wrap {
+            /* 테두리를 제거하고 */
+            /* 하위 요소의 #sdiebar 와 #content 요소에 */
+            /* 테두리를 설정 */
+            border: none;
+        }
+        #wrap::after {content:""; display: block; clear: both;}
+        
+        #sidebar {
+            float:left;
+            width: 200px;
+            border: 3px solid #333;
+            box-sizing: border-box;
+            margin-right: 10px;
+            height: 580px;
+        }
+
+        #content {
+            float: right;
+            width: 870px;
+            border: 3px solid #333;
+            box-sizing: border-box;
+            height: 580px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- 레이아웃 폭을 결정하기 위한 레이아웃 요소 -->
+    <div id="container">
+        <header id="header">Header</header>
+        <nav id="nav">Navigation</nav>
+        <div id="wrap">
+            <aside id="sidebar">SideBar</aside>
+            <article id="content">Content</article>
+        </div>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>

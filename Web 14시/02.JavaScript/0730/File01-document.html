@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <!--  -->
+    <input type="checkbox" name="check" id="check">
+    <label for="check">CHECK</label>
+    <script>
+        // id 속성의 값이 "check" 인 요소인 객체를 반환
+        var check = document.getElementById("check");
+        
+        // check 객체의 속성 중 type 속성의 값 반환
+        var checkType = check.getAttribute("type");
+
+        console.log("check type : " + checkType);
+
+        check.setAttribute("checked", "");
+        check.setAttribute("class", "red-color"); // console 창 확인
+    </script>
+
+    <hr>
+    <a href="http://www.google.com" id="engine">Search Engine</a>
+    <script>
+        // 조작하려면 반드시 탐색 메서드가 필요
+        // var link = document.getElementsByTagName("a");
+        var link = document.getElementById("engine");
+
+        // href 속성의 값을 "https://www.naver.com" 으로 설정
+
+        link.setAttribute("href", "https://www.naver.com")
+    </script>
+
+    <hr>
+    <h1 id="hello">Hello World!</h1>
+    <script>
+        // id 속성의 값이 "hello" 인 요소를 Element 객체로 반환
+        var hello = document.getElementById("hello");
+
+        // id 속성의 값이 "hello" 인 요소의 Element 객체를 통해 스타일 지정
+        // 스타일 속성의 값을 통해서 스타일을 설정할 수 있고,
+        // 하이픈(-)이 포함된 속성은 아래와 같이
+        // 하이픈을 제거하고 두번째 단어부터 첫글자를 대문자로 작성.
+        hello.style.backgroundColor = "yellowgreen";
+        hello.style.border = "2px solid black";
+        hello.style.color = "orange";
+    </script>
+
+</body>
+</html>

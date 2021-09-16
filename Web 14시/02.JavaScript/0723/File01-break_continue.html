@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <pre><script>
+        // 그 외 제어문
+        //  break     : 반복문을 종료시키는 제어문
+        //  continue  : 반복문의 다음 분기로 넘어가는 제어문
+
+        for(var i = 0; i < 10; i++) {
+            // i의 값이 7 이상이면 반복문을 종료
+            if( i >= 7 ) {
+                // 반복문을 즉시 종료한다.
+                break;
+            }
+            document.writeln("i : " + i);
+        }
+    </script></pre>
+
+    <pre><script>
+        // break 문
+        var items = ['apple', 'banana', 'cat', 'doll', 'egg'];
+
+        // 'cat' 의 인덱스와 함께 'cat' 문자열을 출력
+
+        for(var i = 0; i < items.length; i++) {
+            if(items[i] == 'cat') {
+                document.writeln("item : " + items[i]);
+                // 이미 'cat'을 찾았기 때문에
+                // 더이상 반복문을 수행할 필요가 없다.
+                break;
+            }
+        }
+    </script></pre>
+
+    <pre><script>
+        // continue 문
+
+        // // 3의 배수만 출력
+        // for(var i = 0; i < 10; i++) {
+        //     if( i % 3 == 0) {
+        //         document.writeln("-----------------");
+        //         document.writeln("이번에 출력될 숫자");
+        //         document.writeln(">>> " + i);
+        //     }
+        // }
+
+        for(var i = 0; i < 10; i++) {
+
+            // 3의 배수가 아니면 아래의 코드를 더 이상 수행할 필요가 없기 떄문에
+            // 다음 반복으로 넘어간다. (즉, 코드를 스킵한다.)
+            if( i % 3 != 0) {
+                continue;
+            }
+                document.writeln("-----------------");
+                document.writeln("이번에 출력될 숫자");
+                document.writeln(">>> " + i);
+        }
+
+
+    </script></pre>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>Example01 - Selector</title>
+        <style>
+            #list > li > span {
+                background-color: black;
+                color: gold;
+                /* 처음에는 보이지 않게 설정 */
+                display: none;
+            }
+
+            /* 마우스 커서가 올라간 li 요소의  */
+            /* span 요소가 보여지도록 스타일을 설정 */
+            #list > li:hover > span {
+                display: inline;
+            }
+
+            /* ================================================ */
+            /* 마우스 커서가 올라간 li 요소의 */
+            /* 마지막 영역에 요소를 추가하도록 */
+            /* 스타일을 설정 */
+            #list2 > li:hover::after {
+                /* 필수 속성 */
+                content:"★";
+
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="list">
+            <li>H1<span>★</span></li>
+            <li>H2<span>★</span></li>
+            <li>H3<span>★</span></li>
+            <li>H4<span>★</span></li>
+            <li>H5<span>★</span></li>
+            <li>H6<span>★</span></li>
+            <li>H7<span>★</span></li>
+            <li>H8<span>★</span></li>
+            <li>H9<span>★</span></li>
+            <li>H10<span>★</span></li>
+        </ul>
+
+        <hr>
+        <ul id="list2">
+            <li>H1</li>
+            <li>H2</li>
+            <li>H3</li>
+            <li>H4</li>
+            <li>H5</li>
+            <li>H6</li>
+            <li>H7</li>
+            <li>H8</li>
+            <li>H9</li>
+            <li>H10</li>
+    </body>
+</html>

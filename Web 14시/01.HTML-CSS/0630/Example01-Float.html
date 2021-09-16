@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - Menu Bar</title>
+    <style>
+        #menu-bar {
+            /* 컨텐츠의 최대 너비로 설정 */
+            /* 지원되지 않는 브라우저가 있을 수 있다. */
+            width: max-content;
+            font-size: 1.5 em;
+            font-family: Tahoma, sans-serif;
+            list-style-type: none;
+            padding: 0;
+            margin: 50px auto;
+            /* background-color: gray; */
+        }
+        #menu-bar::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #menu-bar > li {
+            /* 메뉴 항목들을 나란히 나열하기 위해서 */
+            /* float 스타일 속성을 설정 */
+            float: left;
+           
+            background-color: #ccc;
+            border: 1px solid #999;
+        }
+
+        /* a 요소를 메뉴의 항목 버튼으로 만들어야 한다. */
+        /* 그래야 텍스트 뿐만 아니라 영역만으로 */
+        /* a 요소의 기능을 그대로 사용할 수 있다. */
+        #menu-bar > li > a {
+            /* a 요소는 inline 요소이기 때문에 크기를 가질 수 없다.*/
+            /* 따라서 block 형식으로 설정해야 한다. */
+            display: block;
+
+            /*  내부 여백(padding)을 이용하여 */
+            /* a 요소의 영역을 결정한다. */
+            padding: 0.5em 1em;
+
+            /* 밑줄 제거 */
+            text-decoration: none;
+            /* 글자 색 */
+            color: blue;
+        }
+
+        /* 둥근 모서리 */
+        /* 테두리 속성이 설정된 li 요소들의 */
+        /* borer-radius 속성을 설정 */
+        #menu-bar > li:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+        #menu-bar > li:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* 항목간의 테두리 설정 */
+        /* 두 항목의 테두리가 같이 설정되면서 */
+        /* 바깥 테두리보다 두배로 두껍게 보인다. */
+        /* 따라서 한 쪽 테두리를 지운다. */
+        #menu-bar > li:not(:first-child) {
+            border-left: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu-bar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="#javascript">JavaScript</a></li>
+        <li><a href="jquery">jQuery</a></li>
+    </ul>
+    
+</body>
+</html>

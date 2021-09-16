@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Input Event</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+<style>
+    input {
+        border: none;
+        outline: none;
+    }
+</style>
+<script>
+    window.addEventListener("load", function() {
+        var account = document.getElementById("account");
+        var password = document.getElementById("password");
+        var login = document.getElementById("login");
+
+        function focusing() {
+            this.style.border = "2px solid orange;"
+        }
+        function blur() {
+            this.removeAttribute("style");
+        }
+
+        account.addEventListener("focus", focusing);
+        account.addEventListener("blur", blur);
+        // account.addEventListener("focusout", function() {
+        //     if(this.value.length == 0) {
+        //         alter("계정을 입력하세요.");
+        //     }
+        // });
+        
+        password.addEventListener("focus", focusing);
+        password.addEventListener("blur", blur);
+
+        // password.addEventListener("focusout", function() {
+        //     if(this.value.length == 0) {
+        //         alter("비밀번호를 입력하세요.");
+        login.addEventListener("submit", function(event) {
+            // form 요소의 submit의 기본 이벤트
+            // action 속성에 설정된 경로로
+            // 입력된 값을 전달하기 위해 페이지를 이동
+
+            // 따라서 계정 또는 비밀번호가
+            // 입력되지 않았으면 기본 이벤트를 제거함으로써
+            // 페이지가 넘어가지 않도록 한다.
+            if(account.value.length == 0) {
+                event.preventDefault();
+                account.focus(); // 포커싱
+                alert("계정을 입력하세요.");
+            }else if(password.value.length == 0) {
+                event.preventDefault();
+                password.focus(); // 포커싱
+                alert("비밀번호를 입력하세요.");
+                }
+        })
+                  
+    });
+</script>
+</head>
+<body>
+    <form action="/" method="POST" id="login">
+        <ul>
+            <li><input type="text" name="account" id="account" autocomplete="off"></li>
+            <li><input type="password" name="password" id="password"></li>
+            <li><button type="submit">로그인</button></li>
+        </ul>
+    
+    </form>
+</body>
+</html>

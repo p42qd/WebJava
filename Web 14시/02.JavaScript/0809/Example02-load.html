@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example02 - load</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <script>
+        window.addEventListener("load", function() {
+            var courses = document.querySelectorAll("#courses > li")
+            // 반환 값 : element 배열
+
+            for(var i = 0; i < courses.length; i++) {
+                console.log(courses[i]);
+
+                courses[i].addEventListener("click", function() {
+                    // 클릭한 항목의 글자 색상을 빨간색으로 설정
+                    this.style.color = "red";
+                    // 클릭한 항목의 이전 형제 요소의 색상을 초록으로 설정
+                    var prev = this.previousElementSibling;
+                    // 이전 형제 요소가 있으면 글자 색을 설정한다.
+                    if(prev) prev.style.color = "green";
+
+                    // 클릭한 항목의 다음 형제 요소의 글자 색상을 파랑으로 설정
+                    var next = this.nextElementSibling;
+                    if(next) next.style.color = "blue";
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <ul id="courses">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+        <li>Protfolio</li>
+    </ul>
+</body>
+</html>

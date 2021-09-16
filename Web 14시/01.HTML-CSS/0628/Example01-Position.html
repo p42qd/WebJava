@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS - Position Property</title>
+    <style>
+        #container {
+            width: 1200px;
+            /* 자식요소들의 position 스타일 속성의 값이 */
+            /* 'absolute' 이거나 'fixed'인 경우 */
+            /* 컨텐츠로 인식이 되어지지 않기 때문에 높이를 설정해줘야 한다. */
+            height: 400px;
+            border: 3px solid green;
+            background-color: #efe;
+            margin: 0 auto;
+            /* 자식 요소들의 기준 영역(Reference Block)으로 설정하기 위해 */
+            /* position 스타일 속성의 값을 'relative'로 설정 */
+            position: relative;
+
+        }
+
+        #container > div {
+            width: 200px;
+            height: 100px;
+            border: 3px solid red;
+            background-color: #fee;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+
+            /* #container 요소를 기준으로 위치를 결정하기 위해 */
+            /* position 스타일 속성의 값을 'absolute'로 결정 */
+            /* #container 요소를 기준영역으로 하기위해서 */
+            /* #container 요소의 position 스타일 속성의 값을 */
+            /* 'static'이 아닌 다른 값으로 설정을 해줘야한다. */
+            position: absolute;
+
+           
+        }
+        /* 좌상단 기준 */
+        #container > div:nth-child(1) {
+            top: 10px;
+            left: 10px;
+        }
+        /* 우상단 기준 */
+        #container > div:nth-child(2) {
+            top: 10px;
+            right: 10px;
+        }
+        /* 좌하단 기준 */
+        #container > div:nth-child(4) {
+            bottom: 10px;
+            left: 10px;
+        }
+        /* 우하단 기준 */
+        #container > div:nth-child(5) {
+            bottom: 10px;
+            right: 10px;
+        }
+        /* 정 중앙 기준 */
+        #container > div:nth-child(3) {
+            /* #container 요소의 크기를 기준으로 백분율 한 값으로 설정된다. */
+            top: 50%;
+            left: 50%;
+            /* 해당 요소의 중앙에 배치하기 위해 */
+            /* 요소(박스)크기의 반절만큼 이동방향의 반대방향(-)으로 이동시킨다. */
+            margin-top: -50px;
+            margin-left: -100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>BOX 1</div>
+        <div>BOX 2</div>
+        <div>BOX 3</div>
+        <div>BOX 4</div>
+        <div>BOX 5</div>
+
+    </div>
+    
+</body>
+</html>

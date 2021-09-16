@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example02</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <pre><script>
+        // a 의 값이 20 보닼 크고 40 보다 작으면 "Success" 출력하도록 작성.
+        var a = 35;
+
+        if(a > 20 && a < 40) {
+            document.writeln("Success");
+        }
+    </script></pre>
+
+    <pre><script>
+        // 어떤 수가 10보다 작거나 50보다 큰 경우 "Hello World"을 출력하고,
+        // 그렇지 않으면 "See you later!"을 출력하는 프로그램을 작성.
+        var a = 55;
+
+        if(a < 10 || a > 50) {
+            document.writeln("Hello World");
+        }else {
+            document.writeln("See you later!");
+        }
+    </script></pre>
+
+    <pre><script>
+        // 어떤 수가 5의 배수인지 검사하여 출력하는 프로그램을 작성.
+        var a = 10;
+
+        if(a % 5 == 0) {
+            document.writeln("a 는 5의 배수입니다.");
+        }else{
+            document.writeln("a 는 5의 배수가 아닙니다.");
+        }
+    </script></pre>
+
+    <pre><script>
+        // 어떤 정수가 음수인지 0인지 양수인지 출력하는 프로그램을 작성.
+        var a = 10;
+
+        if(a > 0){
+            document.writeln("양수");            
+        }else if(a < 0){
+            document.writeln("음수");
+        }else{
+            document.writeln("0");
+        }
+    </script></pre>
+
+    <pre><script>
+        // 어떤 정수가 짝수인지 홀수인지 또는 0인지 출력하는 프로그램을 작성
+        var a = 1;
+
+        // if(a > 0 && a % 2 == 0){
+        //     document.writeln("짝수");
+        // }else if(a % 2 == 1){
+        //     document.writeln("홀수");
+        // }else if ( a == 0 ){
+        //     document.writeln("0");
+        // }
+
+        if ( a== 0) {
+            document.writeln("0");
+        }else if (a % 2 == 0){
+            document.writeln("짝수");
+        }else if (a % 2 == 1){
+            document.writeln("홀수");
+        }
+    </script></pre>
+</body>
+</html>

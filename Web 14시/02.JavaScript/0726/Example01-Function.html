@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example01 - Function</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <pre><script>
+        // 임의의 정수가 짝수인지 판별하는 함수
+        //  매개변수 : 정수를 하나 저장하는 변수
+        //  반환 값  : true, false 중 하나
+
+        // 함수를 정의
+        function isEven(num) {
+            return num % 2 == 0;
+        }
+
+        document.writeln("12 is Even Number : " + isEven(12));
+        document.writeln("12 is Even Number : " + isEven(11));
+
+        var a = 15;
+        if (isEven(a)) {
+            document.writeln("a is even Number!");
+        }else {
+            document.writeln("a is odd Number!");
+        }
+    </script></pre>
+
+    <pre><script>
+        var items = ["Apple", "Banana", "Candy", "Doll"];
+        
+        // 인덱스를 지정하여 인덱스에 해당하는 요소를 반환하는 함수
+        // 인자값으로 넘어온 인덱스의 값이 배열의 범위에 벗어나면 "No Item"을 반환
+
+        function getItem(index) {
+            if(index < 0 || index >= items.length) {
+                return "No Item";
+            }
+            
+            return items[index];
+        }
+
+        document.writeln("item[3] = " + getItem(3));
+        document.writeln("item[7] = " + getItem(7));
+    </script></pre>
+</body>
+</html>

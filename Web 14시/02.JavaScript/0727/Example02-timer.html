@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Example02</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+
+</head>
+<body>
+    <pre><script>
+        // 2, 4, 6, 8, 10이 각각 2초마다 반복하여 출력되도록 작성
+        var i = 2;
+        // 2초마다 수행할 함수
+        function active() {
+            console.log("i = " + i);
+            i+=2;
+            if(i > 10) i = 2;
+        }
+
+        window.setInterval(active, 2000);
+    </script></pre>
+</body>
+</html>

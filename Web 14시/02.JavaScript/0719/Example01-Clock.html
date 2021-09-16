@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example01 - Clock</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <pre><script>
+        // 7777초가 몇시간 몇분 몇초인지 HTML 문서에 출력
+        var inputTime = 7777;
+        
+        // 시간
+        var hour = parseInt(inputTime / 3600);
+        document.writeln("hour : " + hour);
+        // 분
+        var minute = parseInt(inputTime % 3600 / 60);
+        document.writeln("minute : " + minute);
+        // 초
+        var second = inputTime % 60;
+        document.writeln("second : " + second);
+    </script></pre>
+</body>
+</html>

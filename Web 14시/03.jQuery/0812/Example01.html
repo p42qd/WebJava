@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example - jQuery</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <style>
+        #box {
+            width: 400px;
+            height: 400px;
+            background-color: yellowgreen;
+            margin: 20px auto;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(function() {
+
+            // #box 요소 탐색
+            var $box = $("#box");
+
+            window.setTimeout(function() {
+                $box.css({
+                    transition: "1000ms",
+                    transform: "scale(0)",
+                    borderRadius: "50%"
+                });
+            }, 3000);
+        });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

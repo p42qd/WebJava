@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example02 - DigitNumber</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <pre><script>
+        // 3자리 정수의 각 자리 숫자를 출력하는 프로그램을 작성
+
+        var num = 754;
+
+        // 백의 자리 : 7
+        var q = parseInt(num / 100);
+        
+        // 십의 자리 : 5
+        var w = parseInt((num % 100) / 10);
+
+        // 일의 자리 : 4
+        var e = parseInt(num % 10);
+
+        document.writeln("백의자리 : " + q);
+        document.writeln("십의자리 : " + w);
+        document.writeln("일의자리 : " + e);
+    </script></pre>
+
+    <pre><script>
+        // 변수 a 의 값이 짝수이다. 를 표현하는 코드를 작성
+        var a = 17821;
+        var res = (a % 2) == 0;
+        document.writeln("a is even number. : " + res);
+    </script></pre>
+
+    <pre><script>
+        // 밑변 30, 높이 20인 직각 삼각형의 넓이가 400 이상이다. 를 코드로 작성
+        var width = 30;
+        var height = 20;
+        var area = (width * height) / 2;
+
+        var res = area >= 400;
+        document.writeln("area >= 400 : " + res);
+
+    </script></pre>
+
+    <pre><script>
+        // 변수 b의 값이 50이상이면서 3의 배수이다. 를 표현하는 코드를 작성
+        var b = 79;
+        res = (b >= 50) && (b % 3 == 0);
+        document.writeln("b의 값이 50이상이면서 3의 배수 : " + res);
+    </script></pre>
+</body>
+</html>

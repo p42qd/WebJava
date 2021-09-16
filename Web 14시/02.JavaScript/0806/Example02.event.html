@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <h1 id="step">Step by step goes a long way</h1>
+    <button id="toggle">TOGGLE</button>
+    <script>
+        var step = document.getElementById("step");
+        var toggle = document.getElementById("toggle");
+        var isColor = false;
+        toggle.onclick = function() {
+            // 색이 설정되어 있으면
+            if(isColor) {
+            // 원래대로 설정하고
+                step.removeAttribute("style");
+                // isColor = false;
+            }else {
+            // 색이 설정되어 있지 않으면
+            // 빨강으로 설정한다.
+                step.style.color = "red";
+                // isColor = true;
+            }
+
+            // on → off
+            // off → on
+            isColor = !isColor;
+        };
+        
+
+        
+
+      
+    </script>
+</body>
+</html>

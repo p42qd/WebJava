@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - window object</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+
+</head>
+<body>
+    <!-- window 객체 -->
+    <pre><script>
+        // window 객체
+        //  브라우저를 표현하기 위한 모델
+        //  BOM(Brower Object Model)의 최상위 객체
+
+        // 브라우저의 크기
+        var innerWidth = window.innerWidth;
+        var innerHeight = window.innerHeight;
+
+        document.writeln("inner Width : " + innerWidth);
+        document.writeln("inner Height : " + innerHeight);
+
+        var scrollX = window.scrollY;
+        document.writeln("scroll x : " + scrollY);
+    </script></pre>
+
+    <!-- 등록된 타이머 해제 -->
+    <pre><script>
+        // 등록된 타이머는 일시 정지와 같은 기능이 없기 때문에
+        // 타이머를 멈추려면 타이머를 해제 해야한다.
+        //    setTimeout → clearTimeout
+        //      : setTimeout 은 일정 시 뒤에 수행하고 종료되어서
+        //        수행된 후 해제의 의미는 없지만
+        //        일정 시간 전에 해제해야할 때 사용된다.
+        //    setInterval → clearInterval
+        // 타이머를 해제하기 위해서는 타이머의 ID가 필요하다.
+        // 타이머 ID는 타이머 등록 메서드의 반환 값으로 얻을 수 있다.
+
+        var i = 0;
+        // 0 ~ 10 까지 출력하고 종료하는 타이머
+        var timerID = window.setInterval(function() {
+            console.log("i : " + i);
+            i++;
+            if(i > 10) {
+                window.clearInterval(timerId);
+            }
+        }, 1000);
+
+    </script></pre>
+
+
+
+
+</body>
+</html>

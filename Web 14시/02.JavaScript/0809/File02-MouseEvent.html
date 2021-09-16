@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File02 - MouseEvent</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <script>
+        window.addEventListener("load", function() {
+            // 이동
+            // 마우스 포인터가 요소의 영역에 들어갔을 때
+            //  → mouseenter
+            // 마우스 포인터가 요소의 영역에서 빠져 나왔을 때
+            //  → mouseleave
+
+            var hello = document.getElementById("hello");
+            hello.addEventListener("mouseenter", function() {
+                hello.style.backgroundColor = "yellowgreen";
+            });
+            hello.addEventListener("mouseleave", function() {
+                hello.removeAttribute("style");
+            });
+
+            //  클릭
+            hello.addEventListener("mousedown", function() {
+                console.log("mousedown event!");
+                
+            });
+            hello.addEventListener("mouseup", function() {
+                console.log("mouseup event!");
+                this.style.color = "red";
+            });
+            hello.addEventListener("click", function() {
+                console.log("click event!");
+            });
+            hello.addEventListener("dblclick", function() {
+                console.log("dblclick event!");
+                this.style.backgroundColor = "orange";
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <h1 id="hello">Hello World!</h1>
+</body>
+</html>

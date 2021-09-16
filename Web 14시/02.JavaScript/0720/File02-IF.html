@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - IF Statement</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <!-- 제어문 -->
+    <!--  프로그램의 흐름을 제어하는 구문 -->
+    <!--    조건문 : 조건에 따라 수행되는 코드를 결정 -->
+    <!--    반복문 : 특정 횟수 또는 조건에 맞게 코드를 반복 수행 -->
+
+    <!--    제어문을 작성할 때 -->
+    <!--    제어문이 제어하는 코드는 한 번의 들여쓰기를 한 상태로 작성한다. -->
+    <pre><script>
+        // 조건문
+        // if 문
+        //    조건식의 결과가 true 일 때, 코드가 수행되도록 제어한다.
+        //    즉 결과가 false 이면 지정된 코드를 넘어간다.
+        var a = 10;
+
+        //만약 a의 값이 10보다 크면 "10보다 큽니다."를 출력하도록 작성.
+        if(a > 10) { // if 구문이 제어하는 블록 시작
+
+            // if 조건식의 결과가 true 이면 수행되는 블록
+            document.writeln("a가 10보다 큽니다.");
+
+        } // if 구문이 제어하는 블록의 끝
+    </script></pre>
+
+    <pre><script>
+        // if-else 문
+
+        // if(조건식) {
+        // 조건식이 true 일 때 수행되는 블록
+        // }else {
+        // 조건식이 false 일 때 수행되는 블록
+        // }
+
+        // 만약 a의 값이 10 보다 크면 "a가 10보다 큽니다." 를 출력하고
+        // 그렇지 않으면 "a가 10 보다 크지 않습니다."를 출력하도록 작성
+        if(a > 10){
+            // if의 조건식이 true 일 때 수행되는 블록
+            document.writeln("a가 10보다 큽니다.");
+        }else {
+            // if의 조건식이 false 일 때 수행되는 블록
+            document.writeln("a가 10보다 크지 않습니다.");
+        }
+    </script></pre>
+
+    <pre><script>
+        // if-elseif 문
+        // 다수의 조건에 따라 수행되는 코드를 결정할 때 사용하는 제어문
+        // else 문에는 조건식을 작성할 수 없기 때문에 else 문 뒤에 if 문을 작성한다.
+        // 즉, else + if 문
+
+        if(a > 10){
+            // if의 조건식이 true 일 때 수행되는 블록
+            document.writeln("a가 10보다 큽니다.");
+        }else if(a < 10){
+            // 위의 if문의 조건식이 false 이고,
+            // 해당 if문의 조건식이 true 일 때, 수행되는 블록
+            document.writeln("a가 10보다 작습니다.");
+        // }else if(a == 10){
+        }else { 
+            // else 구문은 선택이지만 작성된다면 항상 마지막에 작성 되어야한다.
+            
+            // 무조건 마지막에 작성한다고 해서 else 구문으로 작성하는 것이 아닌
+            // 위의 모든 조건을 제외한 경우에 수행할 코드를 작성할 때 사용
+
+            document.writeln("a는 10과 같습니다.");
+        }
+    </script></pre>
+</body>
+</html>

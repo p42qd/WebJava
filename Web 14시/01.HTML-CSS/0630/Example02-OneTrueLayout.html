@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Example02 - One True Layout</title>
+    <!-- CSS 초기화 -->
+    <!-- URL 경로를 지정 -->
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <style>
+        div > * {
+            background-color: gray;
+        }
+        #container {
+            /* 레이아웃의 폭을 고정으로 설정한다. */
+            /* 보통 1080px 또는 1200px을 많이 사용한다. */
+            width: 1200px;
+            /* 중앙에 배치 */
+            margin: 0 auto;
+        }
+
+        /* 헤더 영역 */
+        #header {
+            height: 100px;
+            text-align: center;
+            background-color: orange;
+        }
+
+        /* 네비게이션 영역 */
+        #nav {
+            height: 40px;
+            text-align: center;
+            background-color: yellowgreen;
+        }
+
+        /* 사이드바 + 컨텐츠 영역 */
+        #wrap::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        /* 사이드바 영역 */
+        #sidebar {
+            width: 250px;
+            background-color: blueviolet;
+            /* #content 요소와 나란히 배치하기 위해서 */
+            /* float 스타일 속성을 설정 */
+            float: left;
+            height: 500px;
+        }
+        /* 컨텐츠 영역 */
+        #content {
+            width: 950px;
+            float: left;
+            background-color: navy;
+            height: 500px;
+        }
+        /* 푸터 영역 */
+        #footer {
+            height: 60px;
+            background-color: gray;
+
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 전체 레이아웃의 폭을 고정으로 하기 위해서 -->
+    <!-- 모든 요소를 포함하는 컨테이닝 블록을 작성 -->
+    <div id="container">
+        <!-- 헤더 영역 -->
+        <header id="header">Header</header>
+        <!-- 네이게이션 영역 -->
+        <nav id="nav">Navigation</nav>
+        <!-- 사이드바 + 컨텐츠 영역 -->
+        <div id="wrap">
+            <!-- 사이드바 영역 -->
+            <aside id="sidebar">Sidebar</aside>
+            <!-- 컨텐츠 영역 -->
+            <artice id="content">Content</artice>
+        </div> <!-- end of #wrap-->
+        <!-- 푸터 영역 -->
+        <footer id="footer">Footer</Footer>
+
+    </div> <!-- end of #container-->
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - IF</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    
+</head>
+<body>
+    <pre><script>
+        var a = 15;
+
+        if( a > 10) {
+            document.writeln("a가 10보다 큽니다.");
+        }else {
+            if(a < 10){
+                document.writeln("a가 10보다 작습니다.");
+            }else {
+                document.writeln("a가 10과 같습니다.");
+            }
+        }
+    </script></pre>
+
+    <pre><script>
+        // 놀이 공원을 방문 했을 때
+        // 1. 입장권이 있으면 "입장합니다". 를 출력
+        // 2. 입장권이 있는 사람들 중에서
+        // - 어른인 경우 : "성인용" 출력
+        // - 어린이인 경우 : "어린이용" 출력
+
+        // 입장권 여부
+        var isPassCheck = true;
+        // 어른 여부
+        var isAdult = true;
+
+        if(isPassCheck && isAdult) {
+            document.writeln("입장합니다.");
+            document.writeln("성인용");
+        }else if(isPassCheck && !isAdult) {
+            document.writeln("입장합니다.");
+            document.writeln("어린이용");
+        }else {
+            document.writeln("입장권을 구매하세요.");
+        }
+        // ------------------------------------------------
+        
+        document.writeln("\n");
+        if(isPassCheck) {
+            document.writeln("입장합니다.");
+            if(isAdult) {
+                document.writeln("성인용");
+            }else{
+                document.writeln("어린이용");
+            }
+        }else {
+            document.writeln("입장권을 구매하세요.");
+        }
+    </script></pre>
+</body>
+</html>

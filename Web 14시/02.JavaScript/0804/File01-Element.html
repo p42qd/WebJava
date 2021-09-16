@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - element</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <!-- <style>
+        #container {
+            /* 높이를 li 요소 하나의 높이 만큼 설정 */
+            height: 2em;
+            width: 600px;
+            border: 10px solid gold;
+            margin: 300px auto;
+            /* overflow: hidden; */
+        }
+
+        #rolling {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #rolling > li {
+            height: 2em;
+            line-height: 2em;
+            padding-left: 1em;        
+        }
+    </style> -->
+
+    <style>
+        #container > div {
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            line-height: 200px;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px auto;
+            color: navy;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="container">
+        <ul id="rolling">
+            <li>1. Time is gold.</li>
+            <li>2. No sweat, no sweet.</li>
+            <li>3. Asking costa nothing.</li>
+            <li>4. Step by step goes a long way.</li>
+            <li>5. You will never know until you try.</li>
+        </ul>
+    </div> -->
+
+    <div id="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <script>
+        // var first = document.querySelector("#container > div:first-child");
+        console.log(first);
+
+        // #container 요소의 첫번째 자식을 탐색하기 위해서
+        // #container 요소를 탐색해야 한다.
+        // → 첫번째 자식 요소가 매 수행마다 바뀌기 때문에
+        // → 상위 요소를 탐색하여 매 수행마다 자식 요소를 탐색한다.
+        var container = document.getElementById("container");
+
+        // #container 요소의 첫번째 자식 요소
+        var first = container.firstElementChild;
+        console.log(first);
+        console.log(container.firstElementChild);
+        console.log("--------------------------");
+        // #container 요소의 첫번째 자식 요소를 제거
+        // → DOM에서 제거됐기 때문에 브라우저에 보여지지 않는다.
+        // container.removeChild(first);
+
+        // #container 요소의 첫번째 자식 요소를
+        // #container 요소의 마지막 자식 요소로 이동
+        //  변수는 처음 저장된 요소를 끝까지 기억한다.
+        //  따라서 반복되는 명령어를 작성해도 결과는 같다.
+        // container.appendChild(first);
+        // container.appendChild(first);
+        //  element 객체의 속성을 통해서 요소에 접근하면
+        //  DOM의 구조를 통해서 접근하기 때문에
+        //  반복되는 명령어를 작성하면 결과가 다르다.
+        container.appendChild(container.firstElementChild);
+        container.appendChild(container.firstElementChild);
+
+        console.log(first);
+        //  DOM을 기준으로한 첫번째 자식 요소를 가지고 있다.
+        console.log(container.firstElementChild);
+    </script>
+
+</body>
+</html>

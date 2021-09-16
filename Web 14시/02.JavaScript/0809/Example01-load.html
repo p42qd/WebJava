@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File01 - load event</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <script>
+        window.addEventListener("load", function() {
+            // HTML 문서가 모두 읽히고
+            // DOM 구축이 끝났을 때 수행되는 함수
+
+            window.setTimeout(function() {
+                var element = document.createElement("h1");
+                element.innerHTML = "Hello World!"
+                document.body.appendChild(element);
+            }, 3000);
+        })
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>

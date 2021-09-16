@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <style>
+        #container {
+            border-left: 5px solid blueviolet;
+        }
+        #container > div {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="words1">Time is gold.</h2>
+    <h2 class="words1">No sweat, no sweet.</h2>
+    <h2 class="words1">Asking costs nothing.</h2>
+    <script>
+        // 요소 탐색
+        var words1 = document.getElementsByClassName("words1");
+        // 반환 타입 : element 객체들의 배열
+        var colors = ["red", "navy", "yellowgreen"];
+
+        window.setTimeout(function() {
+            // words[0].style.color = colors[0];
+            // words[1].style.color = colors[1];
+            // words[2].style.color = colors[2];
+            for(var i = 0; i < words1.length; i++){
+                words[i].style.color = colors[i];
+            }
+        }, 5000);
+    </script>
+    
+    <hr>
+    <ul id="favorites">
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Juice</li>
+    </ul>
+    <script>
+        // 요소 탐색
+        var items = document.querySelectorAll("#favorites > li");
+        // 반환 타입 : element 객체의 배열
+        var j = 0;
+        var timerId = window.setInterval(function() {
+            items[j].style.color = colors[j];
+            j++;
+
+            // 마지막 li 요소들 까지 설정이 끝나면 타이머를 해제한다.
+            if(j == items.length) {
+                window.clearInterval(timerId);
+            }
+        }, 2000);
+    </script>
+
+    <hr>
+    <div id="container">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script>
+        var boxes = document.querySelectorAll("#container > div");
+        var k = 0;
+        var timerId2 = window.setInterval(function() {
+            boxes[k].style.marginLeft = (100 * (k + 1)) + "px";
+            k++;
+            if(k == boxes.length) {
+                window.clearInterval(timerId2);
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

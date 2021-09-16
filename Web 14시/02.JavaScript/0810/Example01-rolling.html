@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example01 - Rolling</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <style>
+        #container {
+            width: 600px;
+            height: 2em;
+            border: 10px solid gold;
+            margin: 200px auto;
+
+             /* overflow: hidden; */
+        }
+        #rolling {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        #rolling > li {
+            height: 2em;
+            line-height: 2em;
+            padding-left: 1em;
+        }
+        
+    </style>
+   <script>
+       window.addEventListener("load", function() {
+           var rolling = document.getElementById("rolling");
+           var container = document.getElementById("container");
+
+           // 한번 롤링하는 기능(함수)
+           function doRolling() {
+               rolling.style.top="-100%";
+               rolling.style.transition="400ms";
+               // #rolling 요소가 이동한 다음
+               window.setTimeout(function () {
+                    rolling.removeAttribute("style");
+                    rolling.appendChild(rolling.firstElementChild);
+               }, 400);
+           }
+
+
+           // 일정 시간 마다
+           var timerId = window.setInterval(doRolling, 2000);          
+
+           // #container 요소의 영역에
+           // 마우스 포인터가 들어가면 롤링기능을 멈추게 한다.
+           container.addEventListener("mouseenter", function () {
+                window.clearInterval(timerId);
+           });
+
+           // #container 요소의 영역에서
+           // 마우스 포인터가 빠져나오면 롤링기능을 수행하게 한다.
+           container.addEventListener("mouseleave", function () {
+                timerId = window.setInterval(doRolling, 2000);
+           });
+       });
+   </script>
+
+    
+</head>
+<body>
+    <div id="container">
+        <ul id="rolling">
+            <li>1. Time is gold.</li>
+            <li>2. No sweat. no sweet</li>
+            <li>3. Asking cost nothing.</li>
+            <li>4. Step by step goes a long way.</li>
+            <li>5. You will never know until you try.</li>
+        </ul>
+    </div>
+</body>
+</html>

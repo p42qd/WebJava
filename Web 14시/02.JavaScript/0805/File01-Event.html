@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - event</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <h1 id="commnet">Header 1</h1>
+    <script>
+        var comment = document.getElementById("comment");
+        function clickHandler() {
+            // #comment 요소의 글자 색을
+            // 빨강으로 설정
+            comment.style.color = "red";
+        }
+        // click    : 이벤트 이름
+        //          : 발생한 이벤트의 종류
+        // onclick  : 이벤트 속성
+        //          : 발생한 이벤트의 속성
+        //          : 이벤트 이름 앞에 'on'이 붙는다.
+        // clickHandler: 이벤트 핸들러
+        //              : 이벤트가 발생했을 때 수행할 함수
+        //              : 이벤트 속성에 저장해야 수행된다.
+        comment.onclick = clickHandler;
+
+        // 익명함수를 통해서 핸들러를 연결할 수 있다.
+        // 기존 핸들러는 사라지게 된다.
+        comment.onclick = function() {
+            // comment.style.backgroundColor = "yellowgreen";
+
+            // 클릭된 요소의 배경색을 설정
+            this.style.backgroundColor = "yellowgreen";
+        }
+
+        // -------------------------------
+        var obj = {
+            property: "value",
+            method: function() {
+                this.property
+            }
+        }
+
+        obj.method = function() {
+            console.log(this.property);
+        };
+
+        obj.method();
+        // --------------------------------
+    </script>
+    <hr>
+    <h1 id="header1">Header 1</h1>
+    <h1 id="header1">Header 2</h1>
+    <h1 id="header1">Header 3</h1>
+    <script>
+        var header1 = document.getElementById("header1");
+        var header2 = document.getElementById("header2");
+        var header3 = document.getElementById("header3");
+
+        // 이벤트 핸들러
+        //  다수의 요소에 연결한 핸들러라면
+        //  this 키워드를 사용하는 것이 좋다.
+        function handler1() {
+            // header1.style.color = "red";
+            // 클릭된 요소의 글자 색을 설정
+            this.style.color = "red";
+        }
+
+        header1.onclick = handler1;
+        header2.onclick = handler1;
+        header3.onclick = handler1;
+    </script>
+    
+</body>
+</html>

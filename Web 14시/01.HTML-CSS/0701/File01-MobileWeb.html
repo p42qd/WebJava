@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML&CSS - Mobile Web</title>
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <style>
+        #header {
+            background-color: skyblue;
+            /* #sidebar-button영역을 기준으로 */
+            position: relative;
+        }
+        #header > h1 {
+            font-size: 2.4em;
+            font-weight: 900;
+            line-height: 60px;
+            text-align: center;
+        }
+        #sidebar-button {
+            /* #header 요소의 영역을 기준으로 */
+            /* 우측 중앙에 배치 */
+            position: absolute;
+
+            width: 30px;
+            height: 30px;
+
+            right: 15px;
+            top: 50%;
+            margin-top: -15px;
+
+            /* 기본 스타일 제거 */
+            border: none;
+            outline: none;
+            background-color: transparent;
+            padding: 0;
+
+            /* 마우스 커서 */
+            cursor: pointer;
+
+            background: url("../../images/black-24dp/2x/outline_menu_black_24dp.png");
+        }
+        #sidebar-button > sapn {display: none;}
+        /* 사이드 바  */
+        #sidebar {
+            position: fixed;
+            width: 80%;
+            right: 0;
+            /* 숨기는 위치 */
+            right: -80%;
+            /* transition: 400ms; */
+            top: 60px;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6)
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>Mobile Header</h1>
+        <button id="sidebar-button"><span>Sidebar Button</span></button>
+    </header>
+    <nav id="nav">Navigation</nav>
+    <aside id="sidebar">Side bar</aside>
+    <article id="content">Content</article>
+    <footer id="footer">Footer</footer>
+</body>
+</html>

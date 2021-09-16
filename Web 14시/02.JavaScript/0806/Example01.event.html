@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <h1 id="ask">Asking costs nothing</h1>
+    <button id="change">CHANGE</button>
+    <script>
+        var ask = document.getElementById("ask");
+        var change = document.getElementById("change");
+        var colors = ["red", "navy", "yellowgreen", "gold"];
+        var i = 0;
+        function changeColor() {
+            // 이벤트 핸들러
+            //  이벤트가 발생했을 때 수행할 함수
+            ask.style.color = colors[i]
+            i++;
+            i %= colors.length;
+        }
+
+        change.onclick = changeColor;
+
+        // window.setInterval(changeColor, 1000);
+    </script>
+</body>
+</html>

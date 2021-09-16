@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example03 - Event</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <h1 id="hello">Hello World!</h1>
+    <script>
+        // #hello 요소를 클릭하면
+        // #hello 요소를 보이지 않도록 작성.
+        var hello = document.getElementById("hello");
+
+        // 이벤트 핸들러를 정의
+        function handler1() {
+            hello.style.display = "none";
+        }
+
+        hello.onclick = handler1;
+    </script>
+    <hr>
+    <h1 id="best">DO YOUR BEST!</h1>
+    <script>
+        // #best 요소를 클릭하면
+        // 1초에 걸쳐 서서히 사라지도록 작성
+        var best = document.getElementById("best");
+
+        best.onclick = function() {
+            // 이벤트 핸들러
+            // 해당 요소가 클릭되면 수행되는 함수
+            this.style.transition = "1000ms";
+            this.style.opacity = 0;
+            this.style.visibility = "hidden";
+        }
+    </script>
+</body>
+</html>

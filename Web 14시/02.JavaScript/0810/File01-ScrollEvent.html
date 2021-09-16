@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Scroll Event</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        #box {
+            width: 300px;
+            height: 200px;
+            border: 10px solid orange;
+            margin-top: 1800px;
+            margin-left: 400px;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function() {
+            var box = document.getElementById("box");
+            // 브라우저에 스크롤이 되어졌을 때
+            // 뷰포트의 상단을 기준으로 변화를 줄 때
+           /* window.addEventListener("scroll", function() {
+                console.log("window.innerWidth : " + window.innerWidth);
+                console.log("window.innerHeight : " + window.innerHeight);
+                console.log("window.scrollY : " + window.scrollY);
+                console.log("window.pageYoffset" + window.pageYOffset);
+                console.log("------------------------");
+                if(box.offsetTop <= window.scrollY) {
+                    box.style.borderColor = "yellowgreen";
+                    box.style.marginLeft = "500px";
+                }else {
+                    box.removeAttribute("style");
+                }
+            });
+            */
+        window.addEventListener("scroll", function() {
+            var scrollHeight = window.scrollY + window.innerHeight;
+            var boxBottom = box.offsetTop + box.offsetHeight;
+
+            if(scrollHeight >= boxBottom) {
+                box.style.borderColor = "yellowgreen";
+                box.style.marginLeft = "500px";
+            }else {
+                box.removeAttribute("style");
+            }
+        });
+    });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

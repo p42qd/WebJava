@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File01 - load event</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <script>
+        // head 내에 탐색을 하면
+        // 아직 body 요소가 DOM에 구축이 되기 전이기 때문에
+        // 탐색이 되지 않는다.
+        // 따라서 탐색 후 조작하면 오류가 발생한다.
+       //  var hello = document.getElementById("hello");
+       //  console.log(hello);
+       //  hello.style.color = "red";
+
+       window.addEventListener("load", function() {
+           // load event : 브라우저가 HTML 문서를 모두 읽고
+           //            : DOM 구축을 끝내고 객체를 완성할 때
+           //            : 발생하는 이벤트
+           // 이벤트 핸들러 : DOM 구축이 끝난 시점에 실행하는 함수
+           
+        var hello = document.getElementById("hello");
+        console.log(hello);
+        hello.style.color = "red";
+       })
+    </script>
+</head>
+<body>
+    <h1 id="hello">Hello World!</h1>
+</body>
+</html>

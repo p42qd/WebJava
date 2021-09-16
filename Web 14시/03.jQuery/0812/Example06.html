@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example022</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#hello").on("click", function() {
+                // 클릭한 요소
+                //  this타입 : element 객체
+                $(this).css({
+                    transition: "1000ms",
+                    opacity: 0,
+                    visibility: "hidden"
+                });
+            });
+        });
+    </script>
+    <!-- HTML 문서에서 h1 요소를 클릭하면 1초에 걸쳐 점차 흐릿하게 화면에서 -->
+    <!-- 사라지게 하는 프로그램을 jQuer를 이용해 작성 -->
+</head>
+<body>
+    <h1 id="hello">Hello World!</h1>
+</body>
+</html>

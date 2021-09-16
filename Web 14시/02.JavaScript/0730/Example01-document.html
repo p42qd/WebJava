@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example01 - document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <ul id="comments">
+        <li>Time is gold.</li>
+        <li>No sweat, no sweet. </li>
+        <li>Asking costs nothings.</li>
+        <li>Step by step goes a long way.</li>
+        <li>You will never know until you try.</li>
+    </ul>
+
+    <script>
+        //  #comments 요소의 자식 요소들의
+        // 내부 문자 앞에 1번부터 차례대로 번호를 추가하도록
+        // 코드를 작성.
+
+        // 자식 요소들이 다수이기 때문에
+        // querySelectorAll() 메서드로 탐색
+        // 결과 값 : element 객체를 포함한 배열
+        var comments = document.querySelectorAll("#comments > li");
+
+        for(var i = 0; i < comments.length; i++) {
+            // comments 의 i 번째 요소의 innerHTML 속성의 값을 설정
+            comments[i].innerHTML = (i+1) + ". " + comments[i].innerHTML;
+        }
+
+    </script>
+</body>
+</html>

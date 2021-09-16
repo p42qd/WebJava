@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <style>
+        #container {
+            width: 1200px;
+            border: 10px solid white;
+            margin: 100px auto;
+
+            /* overflow: hidden; */
+        }
+        #slide {
+            width: 500%;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        #slide::after{content:""; display: block; clear: both;}
+        #slide > li {
+            float: left;
+            width: 20%;
+        }
+        #slide > li > img {
+            display: block;
+            width: 100%;
+        }   
+    </style>
+    <script>
+        window.addEventListener("load", function() {
+            var slide = document.getElementById("slide");
+            var container = document.getElementById("container");
+
+            function doSlide() {
+                slide.style.left = "-100%";
+                slide.style.transition = "400ms";
+                window.setTimeout(function () {
+                    slide.removeAttribute("style");
+                    slide.appendChild(slide.firstElementChild);
+                }, 400);
+            }
+            var timerId = window.setInterval(doSlide, 2000);
+
+            container.addEventListener("mouseenter", function() {
+                window.clearInterval(timerId);
+            });
+
+            container.addEventListener("mouseleave", function() {
+                timerId = window.setInterval(doSlide, 2000);
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <ul id="slide">
+            <li><img src="../../images/banner-11.png" alt="photo"></li>
+            <li><img src="../../images/banner-12.png" alt="photo"></li>
+            <li><img src="../../images/banner-13.png" alt="photo"></li>
+            <li><img src="../../images/banner-14.png" alt="photo"></li>
+            <li><img src="../../images/banner-15.png" alt="photo"></li>
+        </ul>
+    </div>
+    
+</body>
+</html>

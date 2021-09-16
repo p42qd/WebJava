@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - jQuery</title>
+    <!-- jQuery CDN -->
+    <!--  버전 생략 시, 많이 사용되던 버전을 가져온다. -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+        window.addEventListener("load", function() { });
+            
+        // jQuery 에서는 window 객체의 load 이벤트를 사용 X
+        // document 객체의 ready 이벤트를 사용 O
+        // jQuery 방식대로 이벤트 핸들러를 연결
+            
+        // jQuery 함수를 통해서 document 객체를 jQuery 객체로 반환하고
+        // ready 이벤트의 핸들러를 연결하기 위해서
+        // ready 메서드를 호출하여 핸들러를 전달한다.
+        jQuery(document).ready(function() {
+            // document 객체의 ready 이벤트 핸들러
+        });
+
+        // jQuery 함수는 객체를 생성/반환하는 용도로
+        // 빈번하게 사용되는 함수이다.
+        // 따라서 jQuery 함수명 대신에 '$'를 사용한다.
+        $(document).ready(function() { });
+                
+        // head 태그 내에서 jQuery를 이용하려면
+        // 위의 코드를 먼저 작성하게 된다.
+        // 따라서 jQuery 함수에서
+        // document 객체의 ready 이벤트 핸들러를
+        // 인자 값으로 받는다.
+
+        $(function() {
+            // jquery 함수 내에 작성된 함수는
+            // document 객체의 ready 이벤트 핸들러이다.
+            var hello = document.getElementById("hello");
+            hello.style.color = "red";
+
+            // element 객체를 jQuery 객체로 변환
+            var jHello = $(hello);
+            // hello : element 객체
+            hello.innerHTML += "element!";
+            // jHello : jQuery 객체
+            jHello.html("new jQuery Object!");
+
+            // 선택자를 갖는 jQuery 함수
+            //  DOM 에서 탐색하여 반환한다.
+            var jHello2 = $("#hello");
+            jHello2.html("new new jQuery Object!");
+
+            // HTML 형식의 문자열을 갖는 jQuery 함수
+            var jHello3 = $("<h1></h1>");
+            // h1 요소를 생성해서 jQuery 객체로 변환
+            jHello3.html("new new new jQuery Content!");
+        });
+    </script>
+
+    <script>
+        $(function() {
+            var $item = $("#list > li");
+            console.log($item);
+            $item.css("font-size", "2em");
+            var object = {
+                backgroundColor : "orange",
+                color : "white"
+            }
+            $item.css(object);
+
+            $item.css({
+                width:"200px",
+                height:"100px"
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 id="header">Hello World!</h1>
+    <hr>
+    <ul id="list">
+        <li>Apple</li>
+        <li>Bag</li>
+        <li>Cat</li>
+        <li>Dog</li>
+        <li>Elephant</li>
+    </ul>
+</body>
+</html>

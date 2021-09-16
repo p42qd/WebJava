@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS - Preperty</title>
+        <link rel="stylesheet" href="../../CSS/theme.css">
+        <style>
+            #container {
+                background-color: gold;
+                /* width: 너비 */
+                /* 설정하지 않을 시, 부모 요소의 컨텐츠 영역의*/
+                /* 너비만큼(100%) 설정 */
+                width: 400px;
+                /* height: 높이 */
+                /* 설정하지 않을 시, 내부 문자 또는 후손 요소들의 */
+                /* 높이에 따라 설정 */
+                height: 400px;
+
+                padding: 1px;
+            }
+
+            #container > div {
+                /* width 와 height 속성의 값을 백분율로 주게 되면 */
+                /* 부모 요소의 컨텐츠 영역의 크기를 기준으로 */
+                /* 백분율 한 값을 적용한다 */
+                background-color: blueviolet;
+                /* 부모요소의 너비에서 50%인 크기만큼 너비를 설정 */
+                width: 50%;
+                /* 부모요소의 높이에서 50%인 크기만큼 높이를 설정 */
+                height: 50%;
+
+                /* margin: 외부 여백 */
+                /* 테두리를 기준으로 바깥 여백 */
+                /* 다른 형제 요소 또는 부모 요소 사이의 */
+                /* 여백을 설정한다 */
+                /* margin 속성 값 중 백분율의 기준은 */
+                /* - 부모 요소의 컨텐츠 영역의 너비 */
+                /* margin 속성 값 중 auto */
+                /* - 좌우에 각각 auto로 설정하면 같은 크기를 가진다*/
+
+                /* 마진 상쇄(중첩) */
+                /* - 상하 외부 여백은 서로 만나면 중첩된다 */
+                /* - 마진이 0이면 하나로 합쳐진다. */
+                /* - 서로 다른 값인 외부 여백인 경우에는 */
+                /* 가장 큰 값으로 중첩된다. */
+                /* - 부모-자식 간의 마진 중첩은 부모 요소의 */
+                /* 내부 여백 또는 테두리 속성을 이용하여 */
+                /* 방지할 수 있다. */
+
+                margin: 20px; /* 모든 방향의 바깥 여백을 20px로 설정 */
+                /* 상하 외부 여백, 좌우 외부 여백을 각각 40px 50px로 설정*/
+                margin: 40px 50px;
+                /* 위쪽을 시작으로 시계 방향 순으로 설정된다. */
+                margin: 10px 20px 30px 50px;
+
+                /* 각 방향의 외부 여백도 설정이 가능하다. */
+                margin-top: 20px;
+                margin-right: 20px;
+                margin-left: 20px;
+                margin-bottom: 20px;
+
+                /* margin의 속성 값 중 auto를 설정하면 */
+                /* 수평측 중앙에 배치된다. */
+                margin: 10px auto;
+
+                /* padding: 내부 여백 */
+                /* 테두리를 기준으로 안쪽 여백 */
+                /* 배경색이 설정된 경우 포함되는 영역이다. */
+                /* 즉, 사용자들에게 실제로 보여지는 영역이다. */
+                /* margin과 사용방법은 같음 */
+                padding: 20px;
+
+                /* box-sizing: 크기 범위 지정 속성 */
+                /* 속성 값 */
+                /*  - content-box: content 영역 */
+                /*  - border-box: content + padding + border 영역 */
+                /*       width, height 설정 시, padding 속성과 border 속성의 */
+                /*       값을 뺀 크기를 content 영역의 크기로 설정한다 */
+                box-sizing: border-box;
+                
+            }
+            
+            /* 백분율을 이용하면 상위 요소 또는 브라우저의 크기에 */
+            /* 크기를 설정할 수 있다. */
+            #container2 {
+                background-color: yellowgreen;
+                width: 50%;
+                height: 100px;
+            }
+            /* ======================================================= */
+            /* #content 요소의 최종 너비: 300px */
+            /*                내부 여백: 20px */
+            #content {
+                width: 300px;
+                padding: 20px;
+                background-color: orangered;
+                box-sizing: border-box;
+            }
+        
+    /* ============================================================== */
+    #box1{
+        width: 300px;
+        height: 300px;
+        margin: 20px auto;
+        background-color: yellowgreen;
+
+        /* 테두리 스타일 */
+        border-style: solid; /* 실선 */
+        border-style: dotted; /* 점선 */
+        border-style: dashed; /* 짧은 선 */
+        border-style: double; /* 겹선 */
+        /* 테두리 두께 */
+        border-width: 10px;
+        /* 테두리 색상 */
+        border-color: navy;
+
+        /* 두께 스타일 색상을 한 번에 설정 */
+        border: 20px solid orangered;
+        /* 상단 테두리 제거 */
+        border-top: none;
+
+        }
+
+        #box2{
+            width: 300px;
+            height: 300px;
+            background-color: orchid;
+            margin: 20px auto;
+
+            border: 10px solid blueviolet;
+            border-radius: 20px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+    <body>
+        <div id="container">
+            <div>BOX</div>
+        </div>
+        <hr>
+        <div id="container2">
+            
+        </div>
+        <hr>
+        <h1>What is Lorem Ipsum? </h1>
+        <p id="content">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+            book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+            unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+            recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <hr>
+        <div id="box1">
+
+        </div>
+        <hr>
+        <div id="box2">
+
+        </div>
+    </body>
+</html>

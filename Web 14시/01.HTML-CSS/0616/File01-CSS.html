@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS - Cascading Style Sheet</title>
+
+    <!-- 외부 스타일 시트 -->
+    <link rel="stylesheet" href="../../CSS/theme.css">
+
+
+    <!-- HTML 문서 내에서 적용할 스타일 시트 -->
+    <!-- 내부 스타일 시트 -->
+    <style>
+        /* CSS를 작성하기 위한 영역*/
+        /* CSS언어로 작성되는 영역이기 때문에 HTML 문법을 사용하지 않는다*/
+
+        /* HTML 문서에 작성된 요소를 내가 원하는 스타일로 꾸밀 수 있다. */
+
+        /*  → 꾸밀 요소를 선택 : 선택자 */
+        /*  → 꾸미기 위한 블록 : CSS 블록 */
+        /*  → 꾸미기 위한 속성 : Property */
+        h1 {
+            /* h1을 꾸미기 위한 속성들을 작성하는 영역 */
+            /* CSS속성명 : 속성값; */
+            color : red; /* 글자 색상*/
+            background-color : black; /* 배경색*/
+            padding : 20px; /* 내부 여백*/
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Cascading Style Sheet</h1>
+    <hr>
+    <h1>Other Header1</h1>
+    <!-- 인라인 스타일 -->
+    <!-- 요소에 style 속성을 통해서 직접적으로 스타일을 지정한다. -->
+    <!-- 추천하는 방식은 아니다. -->
+    <p style="color: orange;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+        dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+        book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+        unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+        recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    
+</body>
+</html>

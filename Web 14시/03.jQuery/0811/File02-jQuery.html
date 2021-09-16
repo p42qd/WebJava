@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery CDN -->
+    <!--  버전 생략 시, 많이 사용되던 버전을 가져온다. -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(document).on("ready", function() {
+            $("#header").css("color", "red");
+
+            $("button").on("click", function() {
+                alert("Clicked Button!");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 id="header">Hello World!</h1>
+    <button id="button">Alert Button</button>
+</body>
+</html>

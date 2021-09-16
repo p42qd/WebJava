@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Operator</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <pre><script>
+        // 비교 연산자
+        // 결과 값이 논리 값(true, false)으로 반환된다.
+        // 데이터 타입이 다르더라도 값이 의미하는 것으로 비교할 수 있으면 비교하여 결과를 반환한다.
+        // 제어문에서 많이 사용되는 연산자 중에 하나이다.
+        //  → 조건식을 작성할 때 사용
+
+        var a = 15;
+        var b = 7;
+
+        // a 가 b 보다 크다. (초과)
+        var res = a > b;
+        document.writeln("a > b : " + res);
+
+        // a 가 b 보다 크거나 같다. (이상)
+        res = a >= b;
+        document.writeln("a >= b : " + res);
+
+        // a 가 b 보다 작다. (미만)
+        res = a < b;
+        document.writeln("a < b : " + res);
+
+        // a 가 b 보다 작거나 간다. (이하)
+        res = a <= b;
+        document.writeln("a <= b : " + res);
+
+        // a와 b가 같다.
+        res = a == b;
+        document.writeln(" a == b : " + res);
+
+        // a와 b가 다르다
+        res = a != b;
+        document.writeln(" a != b : " + res);
+
+        // a와 b가 값과 데이터 타입이 같다.
+        res = a === b;
+        document.writeln(" a === b : " + res);
+
+        // a와 b가 값 또는 데이터 타입이 다르다.
+        res = a !== b;
+        document.writeln(" a !== b : " + res);
+
+        // 비교연산자는 동시에 처리되지 않으므로 범위를 검사할 수 없다.
+
+        // 논리 값이 가지는 정수
+        // true → 1
+        // false → 0
+        a = 23;
+        res = 10 <= a < 30;
+        // res = ture < 30;
+        // res = 1 < 30;
+        // res = true;
+
+        a = 2;
+        res = 10 <= a < 30;
+        // res = false < 30;
+        // res = 0 < 30;
+        // res = true;
+
+    </script></pre>
+
+    <pre><script>
+        // 논리 연산자
+        // 두 논리 값을 연산하여 하나의 논리 값으로 연산하는 연산자
+
+        // && 연산자(AND, 논리 곱)
+        // → 두 논리 값이 모두 true 인 경우에 true를 반환하고
+        //   하나라도 false 인 경우에 false를 반환한다.
+        // → 즉 두 논리값이 모두 참이어야하는 경우에 사용된다.
+        // → A 이고 B, A 이면서 B, A 그리고 B
+
+        // → 3학년이면서 점수가 80점 이상
+        // → a의 값이 30이상이고 50 미만
+
+        var a = 25;
+        // a의 값이 30이상이고 50 미만
+        // 30 <= a < 50
+        // document.writeln(30 <= a < 50)
+
+        var res = (a >= 30) && (a < 50);
+        document.writeln("a의 값이 30 이상이고 50미만 : " + res);
+
+        // || 연산자 (OR, 논리 합)
+        // → 두 논리 값 중 하나라도 true 인 경우에 true를 반환하고
+        //   둘 다 false 인 경우에 false를 반환한다.
+        // → A 또는 B, A 이거나 B   
+        //   → 철수가 사는 곳이 '서울' 또는 '부산'이다.
+        //   → a의 값이 30 미만 이거나 60이상
+        
+        // a의 값이 30 미만 이거나 60이상
+        // a < 30, a >= 60
+        a = 66;
+        res = (a < 30) || (a >= 60);
+        document.writeln("a의 값이 30미만이거나 60이상 : " + res);
+
+
+    </script></pre>
+</body>
+</html>

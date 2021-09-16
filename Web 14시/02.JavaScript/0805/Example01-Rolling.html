@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example01 - Rolling</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <style>
+        #container {
+            width: 600px;
+            height: 2em;
+            border: 10px solid gold;
+            margin: 50px auto;
+
+            /* overflow: hidden; */
+        }
+        #rolling {
+            position: relative;
+            left: 0;
+            top: 0;
+            /* 모든 경우에 효과가 적용되어선 안되기 때문에 */
+            /* JavaScript 에서 필요할 때만 적용되도록 */
+            /* 작성해야 한다. */
+            /* transition: 400ms; */
+        }
+        #rollong > li {
+            height: 2em;
+            line-height: 2em;
+            padding-left: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="rolling">
+            <li>1. Time is gold.</li>
+            <li>2. No sweat, no sweet.</li>
+            <li>3. Asking costa nothing.</li>
+            <li>4. Step by step goes a long way.</li>
+            <li>5. You will never know until you try.</li>
+        </ul>
+    </div>
+    <script>
+        // 1. 일정 시간 마다 (2000ㅡㄴ)
+        // 1-1. #rolling 요소를 #container 요소의 높이만큼 위로 이동
+        // 1-2. #rolling 요소의 움직임이 끝나면
+        // 1-2-1. #rolling 요소를 원위치로 이동
+        // 1-2-2. #rolling 요소의 첫번째 자식 요소를
+        //        #rolling 요소의 마지막 자식 요소로 이동
+        // ---------------------------------------------------------
+        // 요소 탐색
+        var rolling = document.getElementById("rolling");
+        // 1. 일정 시간 마다(2000ms)
+        window.setInterval(function() {
+            // 1-1. #rolling 요소를 #container 요소의 높이만큼
+            //      위로 이동
+            rolling.style.top="-100%";
+            rolling.style.transition = "400ms";
+            // 1-2. #rolling 요소의 움직이 끝나면
+            window.setTimeout(function() {
+                // 1-2-1. #rolling 요소를 원위치로 이동
+                // rolling.style.top = 0;
+                // rolling.style.transitionDuration = "0ms";
+                rolling.removeAttribute("style");
+                // 1-2-2. #rolling 요소의 첫번째 자식 요소를
+                //        #rolling 요소의 마지막 자식 요소로 이동
+                rolling.appendChild(rolling.firstElementChild);
+            }, 400);
+        }, 2000);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <style>
+        #container {
+            /* 높이를 li 요소 하나의 높이 만큼 설정 */
+            height : 2em;
+            width: 600px;
+            border: 10px solid gold;
+            margin: 300px auto;
+            /* overflow: hidden; */
+        }
+
+        #rolling {
+            position: relative;
+            top: 0; 
+            left: 0;
+        }
+
+        #rolling > li {
+            height: 2em;
+            line-height: 2em;
+            padding-left: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div id = #container>
+        <ul id="rolling">
+            <li>Time is gold.</li>
+            <li>No sweat, no sweet. </li>
+            <li>Asking costs nothings.</li>
+            <li>Step by step goes a long way.</li>
+            <li>You will never know until you try.</li>
+        </ul>
+    </div>
+
+    <script>
+        // 일정 시간마다 
+
+
+        //요소 탐색
+        var rolling = document.getElementById("rolling");
+        var i = 1;
+        //일정 시간 마다
+        window.setInterval(function() {
+            // #rolling 요소를 #container 요소의 높이만큼 위로 이동
+
+            // 요소를 이동시키는 방법
+            // 1. margin 속성
+            //       백분율 : 컨테이닝 블록의 너비를 기준 (직접 높이 지정)
+            // rolling.style.marginTop = (-2*i) + "em";
+
+            // 2. position 속성 + top + left + right + bottom
+            //      백분율 : 컨테이닝 블록의 크기
+            // rolling.style.top = (-100*i) + "%";
+
+            // 3. tranform 속성 + translate 함수
+            //      백분율 : 자기 자신의 크기
+            // rolling.style.transform = "translateY(-"+(2*i)+"em)";
+            
+            i++;
+            if(i==5) i = 0;
+        }, 2000);
+    </script>
+</body>
+</html>

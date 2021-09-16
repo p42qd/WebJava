@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example - jQuery2</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+       $('h1[class="header1-head item-h"]').css("color", "yellow");
+       $('h1[class~="item-h"]').css("background-color", "orange");
+       $('h1[class|="item"]').css("padding", "50px");
+       $('h1[class^="header"]').css("color", "white");
+       $('h1[class$="-h"]').css("margin-bottom", "100px");
+       $('h1[class*="head"]').css("border", "5px solid navy");
+    </script>
+</head>
+<body>
+    <h1 class="header1-head item-h">Header-1</h1>
+    <h1 class="header1-head item-h">Header-2</h1>
+    <h1 class="header1-head item-h">Header-3</h1>
+    <h1 class="header1-head item-h">Header-4</h1>
+    <h1 class="header1-head item-h">Header-5</h1>
+    <h1 class="header1-head item-h">Header-6</h1>
+</body>
+</html>

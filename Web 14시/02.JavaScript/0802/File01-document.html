@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <style>
+        #container {
+            /* 높이를 li 요소 하나의 높이 만큼 설정 */
+            height : 2em;
+            width: 600px;
+            border: 10px solid gold;
+            margin: 300px auto;
+            overflow: hidden;
+        }
+        #container > ul > li {
+            line-height: 2em;
+            padding-left: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="rolling">
+        <li>Time is gold.</li>
+        <li>No sweat, no sweet. </li>
+        <li>Asking costs nothings.</li>
+        <li>Step by step goes a long way.</li>
+        <li>You will never know until you try.</li>
+        </ul>
+    </div>
+
+    <script>
+        // 일정 시간마다 #rolling 요소를
+        // #container 요소의 높이만큼 위로 이동
+    </script>
+</body>
+</html>

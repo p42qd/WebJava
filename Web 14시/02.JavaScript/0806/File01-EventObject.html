@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+    <style>
+    #box1{
+        width: 800px;
+        height: 800px;
+        background-color: yellowgreen;
+        margin: 20px auto;
+        padding:100px;
+    }
+    #box2{
+        width: 600px;
+        height: 600px;
+        background-color: blueviolet;
+        padding: 100px;
+    }
+    #box3{
+        width: 400px;
+        height: 400px;
+        background-color: orange;
+        
+    }
+    </style>
+<body>
+    <div id="box1"> BOX1
+        <div id="box2"> BOX2
+            <div id="box3"> BOX3</div>
+        </div>
+    </div>
+        <script>
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+            var box3 = document.getElementById("box3");
+
+            box1.onclick = function() {
+                console.log("box1 clicked!");
+                this.style.border = "10px solid white";
+
+                // 아래의 결과를 확인하려면
+                // 하위 요소의 이벤트 전달 제거 메서드를
+                // 주석처리를 해야 한다.
+
+                // 이벤트 핸들러가 동잘될 때
+                // 이벤트가 발생한 요소와
+                console.log("target: " + event.target.id);
+                // 핸들러를 수행하는 요소
+                console.log("currentTarget: " + event.currentTarget.id)
+
+            }
+            box2.onclick = function() {
+                console.log("box2 clicked!");
+                this.style.border = "10px solid white";
+                // 이벤트 전달 제거
+                // event.stopPropagation();
+            }
+            box3.onclick = function(event) {
+                // event : 이벤트 객체
+                //  이벤트에 대한 정보와 기능을 가진 객체
+
+                // 이벤트가 발생하면
+                // 상위 요소에 동일한 이벤트를 전달한다.
+                // 따라서 상위 요소의 클릭이벤트 핸들러도 수행된다.
+                //  → 버블링(bubbling) ↔ 캡처링(capturing)
+                console.log("box3 clicked!");
+                this.style.border = "10px solid white";
+
+                // 버블링을 제거하기 위해서는
+                // 이벤트 객체의 stopProPagation() 메서드를 호출해야 한다.
+                event.stopPropagation();
+            }
+    </script>
+    <hr>
+
+    <a id="naver" href="https://www.naver.com">Naver</a>
+    <script>
+        var naver = document.getElementById("naver");
+        
+        // #naver 요소의 기본 이벤트를 제거
+        // a 요소의 기본 이벤트
+        //  : href 속성에 설정된 경로로 이동
+        naver.onclick = function(event) {
+            // 기본 이벤트 제거
+            event.preventDefault();
+
+            console.log("href: " + this.href);
+        }
+    </script>
+    <hr>
+
+    <ul>
+        <li><a href="http://www.google.com">Google</a></li>
+        <li><a href="http://www.naver.com">Naver</a></li>
+        <li><a href="http://www.daum.net">Daum</a></li>
+        <li><a href="http://www.fackbook.com">Facebook</a></li>
+        <li><a href="http://www.twitter.com">Twitter</a></li>
+    </ul>
+    <script>
+        // 모든 a 요소를 클릭했을 때
+        // 기본 이벤트를 제거하고
+        // href 속성의 값을 알림창으로 출력되도록 작성
+        var links = document.links;
+        // HTML 문서상에 href 속성이 설정된 a 요소들의 배열
+
+        for(var i = 0; i < links.length; i++) {
+            links[i].onclick = function(event) {
+                event.preventDefault();
+                // console.log("i: " + i);
+                // window.alert(links[i].href);
+
+                // 클릭한 요소의 href 속성을 출력
+                window.alert(this.href);
+            }
+        }
+        
+    </script>
+    <hr>
+
+    <h1 id="hello">Hello World!</h1>
+    <script>
+        var hello = document.getElementById("hello");
+
+        hello.onclick = function() {
+            this.style.color = "red";
+        }
+
+        // 표준 이벤트 모델
+        hello.addEventListener("click", function() {
+            this.style.backgroundColor = "yellowgreen";
+        })
+        hello.addEventListener("click", function() {
+            this.style.fontSize = "2em";
+        })
+    </script>
+        
+    
+</body>
+</html>

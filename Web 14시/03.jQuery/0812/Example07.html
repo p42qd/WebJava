@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentasdasd</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $("#items > li:even").css("background-color", "orange");
+        $("#items > li").filter(":even").css("color", "red");
+        $("#items > li").filter(function(index){
+            return index % 3 == 0;
+        }).css("padding", "30px");
+    </script>
+</head>
+<body>
+    <ul id="items">
+        <li>Item-0</li>
+        <li>Item-1</li>
+        <li>Item-2</li>
+        <li>Item-3</li>
+        <li>Item-4</li>
+        <li>Item-5</li>
+        <li>Item-6</li>
+    </ul>
+</body>
+</html>

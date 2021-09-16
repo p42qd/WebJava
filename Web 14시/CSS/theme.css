@@ -1,0 +1,26 @@
+/* theme.css */
+/* 어두운 테마 스타일 시트 */
+
+/* 스타일 시트 영역이기 때문에 CSS블록을 작성하면 된다.*/
+
+/* body 요소 */
+body {
+    /* 배경 색 */
+    background-color: #333;
+    /* 글자 색 */
+    color: white;
+    /* 글자 크기 */
+    /* 1.6배 */
+    /* font-size: 1.6em; */
+    font: 1.6em / 1.6 consolas, "Souce Sans Pro", "Open Sans", "나눔바른고딕", "Tahoma", "Verdana", "Sans-serif";
+
+    padding: 10px;
+    height: 3000px;
+}
+
+pre, h1 {
+    margin: 1em;
+    padding: 1em;
+    background-color: #555;
+    border-radius: 10px;
+}

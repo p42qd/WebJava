@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <h1 id="hello">Hello World!</h1>
+    <script>
+        // #hello 요소의 내부 문자를
+        // "Hello JavaScript"로 설정되도록 작성
+
+        var hello = document.getElementById("hello");
+
+        hello.innerHTML = "Hello JavaScript";
+    </script>
+
+    <hr>
+    <ul id="commnet-list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>  
+    </ul>
+
+    <script>
+        // #comment-list 요소의 자식 요소들의 내부 문자를
+        // comments 배열의 원소의 값으로 차례대로 설정
+        var comments = [
+            "1. Time is gold.",
+            "2. No sweat, no sweet",
+            "3. Asking costs nothings",
+            "4. Step by step goes a long way",
+            "5. You will never know until try"
+         ];
+
+         // 요소 탐색
+         var items = document.querySelectorAll("#comment-list > li");
+
+         // 요소들의 내부 문자를 배열에 저장된 원소로 설정
+         // item[0].innerHTML = comments[0];
+         for(var i = 0; i < items.length; i++) {
+             items[i].innerHTML = comments[i];
+         }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example01</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <pre><script>
+        // 변수 a의 값이 30 이상 50미만의 수이면서 7의 배수이다 를 표현하는 코드 작성
+        var a = 47;
+        res = (a >= 30 && a < 50) && a % 7 == 0;
+        document.writeln(a + " → " + res);
+    </script></pre>
+
+    <pre><script>
+        var score = 87;
+        // 점수가 80점 이상이면 "합격"을 출력하고 그렇지 않으면 "불합격"을 출력하도록 작성
+
+        var res = (score >= 80) ? "합격" : "불합격";
+        document.writeln("점수 : " + score);
+        document.writeln("합격 여부 : " + res);
+    </script></pre>
+
+    <pre><script>
+        var n = 11;
+        // n 의 값이 홀수이면 n의 값에서 2를 곱한 값을 반환하고
+        // 그렇지 않으면 n의 값에서 10일 더한 값을 반환하는 조건연산자를 표현하는 코드 작성
+
+        var res = (n % 2 == 1) ? n * 2 : n + 10;
+        document.writeln("n → " + res);
+    </script></pre>
+
+    <pre><script>
+        var a = 17;
+        var b = 20;
+        // 변수 a, b 중에 큰 값을 출력하도록 조건 연산자를 작성
+
+        var bigger = a > b ? a : b;
+        document.writeln(bigger);
+    </script></pre>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <!-- reset css -->
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <pre><script>
+        //document 객체
+        // → DOM 을 표현하는 객체
+        // → DOM 에 표현되는 요소들을 탐색/조작하기 위해 사용된다.
+        
+        // document.write() 메서드
+        // 문서에 특정 문구를 작성하는 기능
+        // 커서가 그대로 유지된다.
+        document.write("저는 신준호 입니다. 반갑습니다! ");
+
+        // document.writeln() 메서드
+        // 문서에 특정 문구를 작성하는 기능
+        // 커서가 다음 줄로 이동한다. (개행)
+        document.writeln("Hello JavaScript!!");
+
+        //console 객체
+        // 브라우저의 console을 표현하는 객체
+        console.log("Hello Console!!")
+
+        // window 객체
+        // 브라우저를 표현하는 객체
+
+        //브라우저가 일정 시간 뒤에 기능을 수행시키도록 하는 타이머
+        window.setTimeout(function(){
+            console.log("Set Time Out!");
+        },2000);
+
+        // 브라우저가 일정 시간마다 기능을 수행시키도록 하는 타이머
+        window.setInterval(function(){
+            console.log('Set Interval');
+        }, 2000);
+    </script></pre>
+
+    <script>
+        // DOM 특정 요소 추가
+        document.write("<h1>I'm H1 Tag!</h1>");
+    </script>
+</body>
+</html>

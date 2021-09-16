@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Example01 - OneTrueLayout</title>
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <style>
+        #container {
+            /* 레이아웃에 폭을 설정 */
+            width: 1080px;
+
+            /* 레이아웃을 중앙에 배치 */
+            margin: 0 auto;
+        }
+
+        /* 헤더영역 */
+        #header > h1 {
+            font-size: 2.4em;
+            font-weight: bold;
+            padding: 1em;
+            /* 텍스트 그림자 */
+            text-shadow: 4px 4px 4px rgba(0,0,0,0.6);
+        }
+        /* 네비게이션 영역 */
+        #nav {
+            background-color:yellowgreen;
+            /* 요소 그림자 */
+            box-shadow: 4px 4px 4px rgba(0,0,0,0.6);
+
+            margin-bottom: 10px;
+        }
+
+        /* nav 요소의 하위 요소들이 모두 float 속성을 */
+        /* 가진 요소들이기 때문에 컨텐츠로 포함되지 않는다. */
+        /* 따라서 높이를 잡아주기 위해 가상요소선택자를 이용 */
+        #nav::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /* 좌측 메뉴 */
+        #nav > ul:first-child{ float: left; }
+        /* 우측 메뉴 */
+        #nav > ul:last-child{ float: right; }
+        /* 모든 메뉴의 항목 */
+        #nav > ul > li { float: left; }
+        /* 항목 내의 a요소를 버튼처럼 스타일 작성 */
+        #nav > ul > li > a {
+            /* 인라인 요소인 a 요소는 크기 및 여백을 */
+            /* 가질 수 없기 때문에 block 형식으로 설정해야 한다. */
+            display: block;
+            /* 클릭을 하기 위한 영역을 만들기 위해 */
+            /* 내부 여백을 설정한다. */
+            /* width, height : 텍스트 중앙 정렬 X */
+            /* margin : 클릭할 수 있는 영역 X */
+            padding: 1.2em 2em;
+
+            /* 밑줄 제거 */
+            text-decoration: none;
+            /* 글자 색상 */
+            color: navy;
+
+            font-weight: bold;
+        }
+
+        /* 항목에 마우스 커서가 올라갔을 때의 */
+        /* 항목에 적용할 CSS 블록 */
+        #nav > ul > li > a:hover {
+            background-color: #555;
+            color: white;
+        }
+
+        /* 사이드 바 + 컨텐츠 영역 */
+        #wrap::after{
+            content:"";
+            display: block;
+            clear: both;
+            }
+        /* 사이드바 영역 */
+        #sidebar {
+            /* #content 요소와 나란히 배치 */
+            float: left;
+            width: 200px;
+        }
+
+        #sidebar > ul { margin: 30px; }
+
+        #sidebar > ul > li > a {
+            /* #nav 의 후손 a 요소와 마찬가지로 */
+            /* 버튼처럼 스타일 작성 */
+            display: block;
+            padding: 0.5em 1em;
+            /* background-color: gray; */
+            font-size: 1.1em;
+            text-decoration: none;
+            color: black;
+        }
+
+        #sidebar > ul > li > a:hover {
+            background-color: orange;
+            /* 입체 효과 */
+            margin-top: -6px;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.6);
+        }
+        
+        /* 컨텐츠 영역 */
+        #content {
+            /* #sidebar와 나란히 배치 */
+            float: left;
+            width: 880px;
+            padding: 30px;
+            border-left: 1px solid #999;
+            box-sizing: border-box;
+        }
+        #content > h2 {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 0.7em;
+        }
+
+        #content > p {
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+
+        #footer {
+            background-color: #999;
+            height: 100px;
+        }
+
+        #copyright {
+            position: absolute;
+            height: 14px;
+            top: 50%;
+            right: 30px;
+            margin-top: -8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 레이아웃의 폭을 고정적으로 만들기 위한 요소 -->
+    <div id="container">
+        <!-- 헤더 영역 -->
+        <header id="header">
+            <h1>OneTrueLayout</h1>
+        </header>
+
+    
+    <!-- 네비게이션 영역 -->
+    <!-- GNB(Global Navigation Bar) -->
+    <!-- 서비스를 구성하는 모든 페이지들에서 공통적으로 사용하는 메뉴바 -->
+    <nav id="nav">
+        <!-- 제공하는 서비스의 종류가 다르기 때문에 -->
+        <!-- 각각의 목록으로 만들어서 나눈다. -->
+        <!-- 좌측에 배치할 메뉴 -->
+        <ul>
+            <li><a href="home">HOME</a></li>
+            <li><a href="html">HTML</a></li>
+            <li><a href="css">CSS</a></li>
+            <li><a href="javascript">JavaScript</a></li>
+            <li><a href="jquery">jquery</a></li>
+        </ul>
+        <!-- 우측에 배치할 메뉴 -->
+        <ul>
+            <li><a href="login">Log in</a></li>
+            <li><a href="Sign up">Sign up</a></li>
+        </ul>
+    </nav>
+
+    <!-- 사이드바 + 컨텐츠 영역 -->
+    <!-- 사이드바와 컨텐츠를 한 행에 배치하기 위한 요소 -->
+    <div id="wrap">
+        <!-- 사이드 바 영역-->
+        <aside id="sidebar">
+            <ul>
+                <li><a href="home">HOME</a></li>
+                <li><a href="html">HTML</a></li>
+                <li><a href="css">CSS</a></li>
+                <li><a href="javascript">JavaScript</a></li>
+                <li><a href="jquery">jquery</a></li>
+            </ul>
+        </aside>
+
+        <!-- 컨텐츠 영역 -->
+        <article id="content">
+            <h2>What is Lorem Ipsum?</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+                type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+            </p>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its
+                layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
+                using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web
+                page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web
+                sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                purpose (injected humour and the like).
+            </p>
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+                literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
+                College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
+                going through the cites of the word in classical literature, discovered the undoubtable source.
+            </p>
+        </article>
+
+    </div> <!-- end of #wrap-->
+
+    <!-- 푸터 영역 -->
+    <footer id="footer">
+        <span id="copylight">&copy; 2020-2021 SBS Academy Gwangju.</span>
+    </footer>
+
+</div> <!-- end of #container-->
+</body>
+</html>

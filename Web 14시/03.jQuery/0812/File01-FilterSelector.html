@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Filter Selector</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <style>
+        .list {
+            border: 1px solid auto;
+            background-color: #555;
+            border-radius: 8px;
+        }
+        .list > li {
+            margin: 15px;
+        }
+    </style>
+    <script>
+        $(function() {
+            var $list = $(".list > li")
+            var $list1 = $("#list1 > li");
+            var $list2 = $("#list2 > li");
+
+            // nth-child()
+            //  첫 시작이 1로 시작한다.
+            var $list1 = $("#list1 > li:nth-child(3)");
+            $list1.css("color", "red");
+            //  짝수번째에 위치한 요소를 선택
+            var $list1 = $("#list1 > li:nth-child(even)");
+            $list1.css("background-color", "yellow");
+
+            // eq()
+            //  zero-base : 첫 시작이 0부터 시작한다.
+            var $list2 = $("#list2 > li:eq(3)");
+            $list2.css("color", "orange");
+
+            // even()
+            //  인덱스가 짝수인 요소 선택
+            var $list2 = $("#list2 > li:even");
+            $list2.css("background-color", "yellowgreen");
+
+            //----------------------------------------------
+            // 구조 선택자이기 때문에
+            // 구조 상 짝수 번째에 위치한 요소를 선택
+            // $(".list > li:nth-child(even)").css("font-size", "2em");
+
+            // 모든 li 요소들 중에서 짝수번째 인덱스에
+            // 위치한 요소를 선택
+            $(".list > li:even").css("font-size", "2em");
+        });
+    </script>
+
+    <script>
+        $(function() {
+            $("#list3").css({
+                backgroundColor: "#555",
+                borderRadius:"8px",
+                border:"1px solid #555"
+            });
+
+            $("#list3 > li").css("margin","15px")
+                            .filter(":even").css("color", "yellowgreen").end()
+                            .filter(":odd").css("background-color", "navy")
+                            .eq(2).css("font-size", "1.4em").end()
+                            .add(".list > li").css({
+                            width: "200px",
+                            height: "200px"
+                        });
+
+                var $header = $("#header");
+                $header.css("display", "none");
+                console.log($header.is(":visible"));
+                console.log($header.is(".h-tag"));
+        });
+    </script>
+</head>
+<body>
+    <!-- :nth-child() vs :eq(), :even(), :odd() -->
+    <ul id="list1" class="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+    <hr>
+    <ul id="list2" class="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+
+    <ul id="list3">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+    <hr>
+    <h1 id="header" class="h-tag">Header 1</h1>
+
+</body>
+</html>

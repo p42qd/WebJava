@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+</head>
+<body>
+    <h1 id="hello">Hello World!</h1>
+    <!-- JavaScript -->
+    <script>
+        // JavaScript 시작
+
+        //JavaScript로 할 수 있는 기능.
+        // 1. 문서 객체 조작(요소를 조작할 수 있다.)
+        var hello = document.getElementById("hello")
+        hello.style.color = "red";
+
+        // 2. 타이머 기능
+        //  일정 시간 뒤에 특정 기능이 수행되도록 한다.
+        window.setTimeout(function(){
+            alert("Alert Message!!");
+            hello.style.color = "yellowgreen";
+        },2000);
+
+        // 3. 문서 작성
+        // 소괄호 내의 문구를 HTML 문서(DOM)에
+        // 그대로 작성한다.
+        document.writeln("<h1>Hello JavaScript!!</h1>");
+    </script>
+    <hr>
+    <pre><script>
+        // 한 줄(line)에 작성
+        // 커서가 다음 줄로 이동
+        document.writeln("document's write function!");
+        // 작성
+        // 커서가 유지
+        document.write("document's write function!");
+    </script></pre>
+</body>
+</html>

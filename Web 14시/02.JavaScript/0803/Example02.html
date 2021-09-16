@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <ul id="courses">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>JQuery</li>
+        <li>Protfolio</li>
+    </ul>
+    <script>
+        var courses = document.querySelectorAll("#courses > li");
+        
+        // courses의 i번째 요소의 내부 문자가 "HTML"과 같으면
+        for(var i = 0; i < courses.length; i++) {
+            if(courses[i].innerHTML == "HTML") {
+                // courses의 i번째 요소의 글자 색을 빨강으로 설정
+                courses[i].style.color = "red";
+
+                // courses의 i번째 요소의 다음 형제 요소 노드의 글자 색을 파랑으로 설정
+                // courses[i+1].style.color = "blue";
+                courses[i].nextElementSibling.style.color = "blue";
+            }
+        }
+    </script>
+</body>
+</html>

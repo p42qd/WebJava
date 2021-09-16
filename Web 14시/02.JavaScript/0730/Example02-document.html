@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example02 - Document style</title>
+    <style>
+        #circle {
+            width: 400px; 
+            height: 400px; 
+            margin: 20px auto; 
+            background-color: greenyellow;
+            transition: 400ms;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- HTML 문서에서 h1 요소의 배경색을 3초가 지난 다음 군청색으로 변경되도록 작성 -->
+    <h1 id="hello">Hello World!</h1>
+    <script>
+        // 요소 탐색
+        var hello = document.getElementById("hello");
+
+        window.setTimeout(function() {
+            // 일정 시간 뒤에 수행할 함수
+            hello.style.backgroundColor = "navy";
+            hello.style.color = "red";
+        }, 3000);
+    </script>
+
+    <hr>
+    <h1 id="nice">Nice to meet you</h1>
+    <script>
+        var nice = document.getElementById("nice");
+
+        window.setTimeout(function() {
+            nice.style.color = "red";
+        }, 3000);
+    </script>
+
+    <hr>
+    <div id="circle"></div>
+    <script>
+        var circle = document.getElementById("circle");
+
+        window.setTimeout(function() {
+            circle.style.borderRadius = "50%";
+        }, 2000);
+    </script>
+
+    <hr>
+    <h1 id="best">DO YOUR BEST!</h1>
+    <script>
+        // #best 요소의 글자 색상을 2초마다
+        // 빨강, 파랑, 초록, 노랑으로 차례대로
+        // 바뀌도록 코드를 작성
+        var best = document.getElementById("best");
+        var colors = ["red", "blue", "green", "yellow"];
+        var i = 0;
+       
+        window.setInterval(function() {
+            // best의 글자 색상을 특정 색상으로 설정
+            best.style.color = colors[i];
+            i++;
+            // if(i = colors.length) i = 0;
+              
+            i %= colors.length;
+            
+        }, 2000);
+    </script>
+
+    <hr>
+    <h1 id="cost">Asking costs nothing.</h1>
+    <script>
+        // 5초가 지난 후에 1초에 걸쳐서 화면에서 점차 흐릿하게 사라지도록 작성.
+        var cost = document.getElementById("cost");
+        
+        window.setTimeout(function() {
+            cost.style.transition = "1000ms";
+            cost.style.opacity = 0;
+            cost.style.visibility = "hidden";
+        }, 5000);
+
+    </script>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Example04</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+</head>
+<body>
+    <pre><script>
+            // 800ms 마다 1부터 3씩 증가하는 값을 출력하는 타이머를 등록하고
+            // 해당 타이머가 10초 뒤에 종료되도록 프로그램을 작성.
+            var n = 1;
+            var timerId = window.setInterval(function() {
+                console.log("n : " + n);
+                n+=3;
+            }, 800);
+
+            window.setTimeout(function() {
+                // 위의 타이머를 해제
+                window.clearInterval(timerId);
+            }, 10000);
+
+    </script></pre>
+</body>
+</html>

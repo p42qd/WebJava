@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 뷰포트의 너비를 설정하지 않으면 -->
+    <!-- 기본 값(980px)로 설정된다. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML&CSS - MobileWeb </title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <style>
+        /* #box {
+            height: 60px;
+            background-color: black;
+        } */
+        /* ======================================================= */
+        
+        /* 헤더 영역*/
+        #header {
+            background-color: skyblue;
+
+            /* #side-button 요소의 기준 영역으로 지정하기 위해 */
+            /* position 스타일 속성의 값을 relative로 설정 */
+            position: relative;
+        }
+
+        #header > h1 {
+            font-size: 2.4em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        /* 사이드 바(메뉴)를 보이기/숨기기를 위한 버튼 */
+        #side-button {
+            /* #header 요소를 기준으로 우측 중앙에 배치하기 위해*/
+            /* position 스타일 속성의 값을 absolute 로 설정 */
+            position: absolute;
+
+            /* 아이콘의 위치 설정 */
+            right: 15px;
+            top: 50%;
+            margin-top: -15px;
+
+            /* 아이콘의 크기 */
+            width: 30px;
+            height: 30px;
+
+            /* 버튼의 기본 스타일 제거 */
+            border: none;
+            outline: none;
+            background-color: transparent;
+            padding: 0;
+
+            /* 마우스 커서를 포인터로 설정 */
+            cursor: pointer;
+
+            /* 아이콘 설정 */
+            background-image: url("../../Images/outline_menu_black_24dp.png");
+            background-repeat: no-repeat;
+            /* background-size: cover; */
+            background-position: center;
+        }
+
+        #side-button > span {display: none;}
+
+        /* 네비게이션 영역 */
+        #nav {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid skyblue;
+            padding: 10px 0;
+        }
+
+        /* 사이드바(메뉴) 영역 */
+        #sidebar {
+            position: fixed;
+
+            width: 40%;
+            top: 60px;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        /* 컨텐츠 영역 */
+        #content {
+            height: 400px;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid skyblue;
+            padding: 10px 0;
+        }
+
+        #footer {
+            height: 100px;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid skyblue;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="box">
+        <img src="../../Images/apple.jpg" alt="">
+    </div>
+    <nav id="box">
+
+    </nav> -->
+    <!-- ================================================= -->
+    <!-- 모바일 웹 레이아웃 -->
+
+    <!-- 헤더 영역 -->
+    <header id="header">
+        <h1>Mobile Web</h1>
+        <button id="side-button">
+            <apan>Side Menu Button</apan>
+        </button>
+    </header>
+
+        <!-- 네비게이션 영역 -->
+        <nav id="nav">Navigation</nav>
+        
+        <!-- 사이드 바(사이드 메뉴) 영역 -->
+        <aside id="sidebar">Side Bar</aside>
+
+        <!-- 컨텐츠 영역 -->
+        <article id="content">Content</article>
+
+        <!-- 푸터 영역 -->
+        <footer id="footer">Footer</footer>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example01 - jQuery</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(function() {
+            // 3초 뒤에 #header 요소의 글자 색상을
+            // 빨강으로 설정
+            window.setTimeout(function() {
+                $("#header").css("color", "red");
+            }, 3000);
+
+            // 3초 뒤에 #dream 요소를 1초에 걸쳐서
+            // 사라지도록 설정
+            window.setTimeout(function() {
+                $("#dream").css({
+                    opacity:0,
+                    visibility:"hidden",
+                    transition:"1000ms"
+                })
+            }, 3000);
+        });
+    </script>
+</head>
+<body>
+    <h1 id="header">Hello World!</h1>
+    <hr>
+    <h1 id="dream">Dream comes true!</h1>
+    
+</body>
+</html>

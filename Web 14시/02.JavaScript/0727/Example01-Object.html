@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScripy - Example01</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../CSS/theme.css">
+
+</head>
+<body>
+    <!-- window 객체의 타이머 메서드 -->
+    <pre><script>
+        // 일정 시간 뒤에 수행되는 타이머를 등록
+
+        var data = 10;
+        // 일정 시간 뒤에 수행할 기능
+        function active() {
+            console.log("setTimeout() Method : " + data);
+        }
+
+        // active() 함수가 2초 뒤에 실행된다.
+        window.setTimeout(active, 2000); // 1000ms = 1s
+        // setTimeout 메서드는 타이머를 등록하는 함수이지
+        // 실행하는 함수는 아니다. 따라서 등록한 다음
+        // 바로 다음 코드를 이어서 실행한다.
+
+        data = 100;
+
+        // 일정 시간 마다 수행되는 타이머를 등록
+
+        var data2 = 0;
+        // 일정 시간마다 수행할 기능
+        function active2() {
+            console.log("setInterval Method : " + data2);
+            data2++;
+        }
+
+        // active2 함수가 2초마다 수행
+        window.setInterval(active2, 2000);
+
+        document.writeln("data2 : " + data2);
+
+    </script></pre>
+</body>
+</html>
